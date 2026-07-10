@@ -2,12 +2,27 @@
 
 import { useState } from "react";
 
-export default function SupportForm({ appName }: { appName: string }) {
+export default function SupportForm({
+  appName,
+  supportEmail,
+}: {
+  appName: string;
+  supportEmail: string;
+}) {
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // No backend yet — just show success state
+    const form = new FormData(e.currentTarget);
+    const name = String(form.get("name") ?? "");
+    const email = String(form.get("email") ?? "");
+    const message = String(form.get("message") ?? "");
+    const subject = encodeURIComponent(`${appName} support request`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`
+    );
+
+    window.location.href = `mailto:${supportEmail}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
 
@@ -33,8 +48,7 @@ export default function SupportForm({ appName }: { appName: string }) {
           Message Sent!
         </h3>
         <p className="text-text-secondary text-sm">
-          Thank you for reaching out about {appName}. We&apos;ll get back to you
-          as soon as possible.
+          Your email app should open with your {appName} support request.
         </p>
       </div>
     );
@@ -105,7 +119,7 @@ export default function SupportForm({ appName }: { appName: string }) {
         id="support-submit"
         className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-bg-primary font-semibold text-sm hover:from-amber-400 hover:to-amber-500 transition-all duration-300 shadow-lg shadow-amber-400/20 hover:shadow-amber-400/30 cursor-pointer"
       >
-        Send Message
+        Open Email Draft
       </button>
     </form>
   );

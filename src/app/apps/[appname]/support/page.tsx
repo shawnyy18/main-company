@@ -115,7 +115,7 @@ export default async function SupportPage({ params }: { params: Params }) {
             </div>
 
             {/* Contact form */}
-            <SupportForm appName={app.name} />
+            <SupportForm appName={app.name} supportEmail={app.supportEmail} />
 
             {/* Back link */}
             <div className="mt-10 text-center">

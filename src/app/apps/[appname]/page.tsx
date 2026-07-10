@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { apps, getAppBySlug, getAllSlugs } from "@/lib/apps";
+import { getAppBySlug, getAllSlugs } from "@/lib/apps";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
