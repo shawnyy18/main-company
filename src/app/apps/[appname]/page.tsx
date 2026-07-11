@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getAppBySlug, getAllSlugs } from "@/lib/apps";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -67,11 +68,21 @@ export default async function AppPage({ params }: { params: Params }) {
 
             {/* App header */}
             <div className="flex flex-col sm:flex-row items-start gap-6 mb-10">
-              <div
-                className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${gradient} flex items-center justify-center text-bg-primary font-bold text-3xl shadow-xl shrink-0`}
-              >
-                {app.name.charAt(0)}
-              </div>
+              {app.iconImage ? (
+                <Image
+                  src={app.iconImage}
+                  alt={`${app.name} icon`}
+                  width={80}
+                  height={80}
+                  className="w-20 h-20 rounded-3xl shadow-xl shrink-0"
+                />
+              ) : (
+                <div
+                  className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${gradient} flex items-center justify-center text-bg-primary font-bold text-3xl shadow-xl shrink-0`}
+                >
+                  {app.name.charAt(0)}
+                </div>
+              )}
 
               <div>
                 <div className="flex items-center gap-3 mb-2">

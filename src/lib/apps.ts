@@ -11,6 +11,7 @@ export interface AppData {
   appStoreUrl?: string;
   playStoreUrl?: string;
   iconColor: string;
+  iconImage?: string;
   privacyLastUpdated: string;
   termsLastUpdated: string;
   privacyContent: string;
@@ -28,6 +29,7 @@ export const apps: AppData[] = [
     status: "coming-soon",
     platforms: ["ios"],
     iconColor: "sky",
+    iconImage: "/lenso-icon.png",
     privacyLastUpdated: "June 30, 2026",
     termsLastUpdated: "June 30, 2026",
     supportEmail: "support@fskcodehouse.com",

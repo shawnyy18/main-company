@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { AppData } from "@/lib/apps";
 
 const statusStyles: Record<string, { label: string; className: string }> = {
@@ -42,11 +43,21 @@ export default function AppCard({ app }: { app: AppData }) {
       <div className="relative z-10 flex flex-col h-full">
         {/* Icon + Status row */}
         <div className="flex items-start justify-between mb-5">
-          <div
-            className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center text-bg-primary font-bold text-xl shadow-lg transition-transform duration-300 group-hover:scale-110`}
-          >
-            {app.name.charAt(0)}
-          </div>
+          {app.iconImage ? (
+            <Image
+              src={app.iconImage}
+              alt={`${app.name} icon`}
+              width={56}
+              height={56}
+              className="w-14 h-14 rounded-2xl shadow-lg transition-transform duration-300 group-hover:scale-110"
+            />
+          ) : (
+            <div
+              className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center text-bg-primary font-bold text-xl shadow-lg transition-transform duration-300 group-hover:scale-110`}
+            >
+              {app.name.charAt(0)}
+            </div>
+          )}
           <span
             className={`text-[11px] font-medium px-2.5 py-1 rounded-full border ${status.className}`}
           >
