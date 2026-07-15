@@ -1,84 +1,85 @@
+import Image from "next/image";
+import Link from "next/link";
 import { apps } from "@/lib/apps";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AppCard from "@/components/AppCard";
+
+const trustStats = [
+  { value: "PH", label: "Based in the Philippines" },
+  { value: "1", label: "Focused product in launch prep" },
+  { value: "A-Z", label: "From idea to App Store" },
+];
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
 
-      <main className="relative z-10 flex-grow">
-        {/* Hero */}
-        <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-6">
-          <div className="max-w-6xl mx-auto">
-            {/* Ambient glow */}
-            <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-amber-400/5 rounded-full blur-[120px] pointer-events-none" />
-
-            <div className="relative max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-dim border border-border-default text-accent text-xs font-medium mb-8">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+      <main className="flex-grow">
+        <section className="px-5 pb-16 pt-28 sm:px-6 md:pb-24 md:pt-36 lg:px-8">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_0.85fr]">
+            <div>
+              <p className="mb-6 inline-flex rounded-full border border-border-default bg-bg-surface px-3 py-1.5 text-xs font-semibold text-text-secondary">
                 Philippine-based software company
-              </div>
-
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-                We build apps
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500">
-                  people actually use.
-                </span>
-              </h1>
-
-              <p className="text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl mb-10">
-                FSK Codehouse Corp. designs and ships mobile apps and digital
-                products — from idea to App Store. Clean code. Real users.
               </p>
-
-              <div className="flex flex-wrap gap-4">
+              <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-text-primary sm:text-6xl lg:text-7xl">
+                We build apps people actually use.
+              </h1>
+              <p className="mt-6 max-w-2xl text-[17px] leading-8 text-text-secondary sm:text-lg">
+                FSK Codehouse Corp. designs and ships mobile apps and digital
+                products from first sketch to App Store launch. Clean code,
+                thoughtful interfaces, and real user value.
+              </p>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#products"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-bg-primary font-semibold text-sm hover:from-amber-400 hover:to-amber-500 transition-all duration-300 shadow-lg shadow-amber-400/20 hover:shadow-amber-400/30 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-indigo-500/20 transition-all hover:-translate-y-0.5 hover:bg-indigo-600"
                 >
-                  View Our Apps
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2.5}
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
-                    />
-                  </svg>
+                  View apps
                 </a>
-                <a
+                <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border-default text-text-secondary font-medium text-sm hover:border-amber-400/40 hover:text-accent transition-all duration-300 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center rounded-full border border-border-default bg-white px-6 py-3 text-sm font-semibold text-text-primary transition-all hover:-translate-y-0.5 hover:border-indigo-200 hover:text-accent"
                 >
-                  About Us
-                </a>
+                  About FSK Codehouse
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-[440px]">
+              <div className="rounded-[2rem] border border-border-default bg-white p-3 shadow-[var(--shadow-card)]">
+                <Image
+                  src="/LensoCamera (1242 x 2688 px)/1 (2).png"
+                  alt="Lenso fresh moments feed shown on an iPhone"
+                  width={1242}
+                  height={2688}
+                  priority
+                  className="h-auto max-h-[720px] w-full rounded-[1.5rem] object-contain"
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Products grid */}
-        <section id="products" className="py-20 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold mb-3">
-                Our Products
-              </h2>
-              <p className="text-text-secondary text-sm max-w-md">
-                Apps we&apos;re building and shipping. Each one solves a real
-                problem for real people.
+        <section id="products" className="bg-bg-surface px-5 py-18 sm:px-6 md:py-24 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+              <div>
+                <p className="mb-3 text-sm font-semibold text-accent">
+                  Our products
+                </p>
+                <h2 className="text-3xl font-semibold tracking-tight text-text-primary md:text-5xl">
+                  Apps with a clear reason to exist.
+                </h2>
+              </div>
+              <p className="max-w-md text-sm leading-6 text-text-secondary md:text-base">
+                Each product is shaped around a real workflow, a focused user,
+                and a launch path we can support for the long run.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {apps.map((app) => (
                 <AppCard key={app.slug} app={app} />
               ))}
@@ -86,55 +87,53 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* About strip */}
-        <section className="py-20 px-6 border-t border-border-subtle">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                About FSK Codehouse
-              </h2>
-              <p className="text-text-secondary leading-relaxed text-base md:text-lg">
-                FSK Codehouse Corp. is a Philippine-based software company
-                focused on building mobile apps and digital products that solve
-                real-world problems. We believe in clean design, solid
-                engineering, and shipping products that people actually want to
-                use every day. From concept to App Store — we handle the entire
-                journey.
-              </p>
+        <section className="px-5 py-16 sm:px-6 md:py-20 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-2xl border border-border-default bg-white p-6 shadow-[var(--shadow-card)] md:p-8">
+            <div className="grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-center">
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight text-text-primary md:text-3xl">
+                  Small team, product-grade execution.
+                </h2>
+                <p className="mt-4 text-[17px] leading-8 text-text-secondary">
+                  We focus on products we can design, build, launch, and keep
+                  improving. The work is practical, polished, and grounded in
+                  what people will actually open again tomorrow.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-3 md:grid-cols-1">
+                {trustStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-2xl border border-border-default bg-bg-surface p-4"
+                  >
+                    <p className="text-2xl font-semibold text-text-primary">
+                      {stat.value}
+                    </p>
+                    <p className="mt-1 text-sm leading-5 text-text-secondary">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Contact */}
-        <section id="contact" className="py-20 px-6 border-t border-border-subtle">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-lg mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Get in Touch
-              </h2>
-              <p className="text-text-secondary text-sm mb-6">
-                Have a question, partnership idea, or just want to say hi?
-              </p>
-              <a
-                href="mailto:hello@fskcodehouse.com"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border-default text-accent font-medium text-sm hover:border-amber-400/40 hover:bg-accent-dim transition-all duration-300"
-              >
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                  />
-                </svg>
-                hello@fskcodehouse.com
-              </a>
-            </div>
+        <section id="contact" className="px-5 pb-20 sm:px-6 md:pb-28 lg:px-8">
+          <div className="mx-auto max-w-3xl rounded-2xl border border-border-default bg-bg-card p-8 text-center shadow-[var(--shadow-card)] md:p-12">
+            <p className="text-sm font-semibold text-accent">Contact</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-text-primary md:text-4xl">
+              Have a product idea or partnership in mind?
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-[17px] leading-8 text-text-secondary">
+              Send a note and we&apos;ll get back to you with a clear next step.
+            </p>
+            <a
+              href="mailto:hello@fskcodehouse.com"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-indigo-500/20 transition-all hover:-translate-y-0.5 hover:bg-indigo-600"
+            >
+              hello@fskcodehouse.com
+            </a>
           </div>
         </section>
       </main>

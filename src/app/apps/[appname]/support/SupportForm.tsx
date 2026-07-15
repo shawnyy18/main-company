@@ -28,10 +28,10 @@ export default function SupportForm({
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-emerald-400/20 bg-emerald-400/5 p-8 text-center">
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-400/10 mb-4">
+      <div className="rounded-2xl border border-emerald-100 bg-emerald-50 p-8 text-center">
+        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white mb-4">
           <svg
-            className="w-6 h-6 text-emerald-400"
+            className="w-6 h-6 text-emerald-700"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={2}
@@ -57,7 +57,7 @@ export default function SupportForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-2xl border border-border-default bg-bg-card p-6 md:p-8 space-y-5"
+      className="rounded-2xl border border-border-default bg-bg-card p-6 md:p-8 space-y-5 shadow-[var(--shadow-card)]"
     >
       <h2 className="text-sm font-semibold uppercase tracking-wider text-text-muted mb-2">
         Send a Message
@@ -76,7 +76,7 @@ export default function SupportForm({
           name="name"
           required
           placeholder="Your name"
-          className="w-full px-4 py-3 rounded-xl bg-bg-surface border border-border-subtle text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-amber-400/40 focus:ring-1 focus:ring-amber-400/20 transition-colors"
+          className="w-full px-4 py-3 rounded-xl bg-bg-surface border border-border-default text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent-dim transition-colors"
         />
       </div>
 
@@ -93,7 +93,7 @@ export default function SupportForm({
           name="email"
           required
           placeholder="you@example.com"
-          className="w-full px-4 py-3 rounded-xl bg-bg-surface border border-border-subtle text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-amber-400/40 focus:ring-1 focus:ring-amber-400/20 transition-colors"
+          className="w-full px-4 py-3 rounded-xl bg-bg-surface border border-border-default text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent-dim transition-colors"
         />
       </div>
 
@@ -110,14 +110,14 @@ export default function SupportForm({
           required
           rows={5}
           placeholder={`Describe your issue with ${appName}...`}
-          className="w-full px-4 py-3 rounded-xl bg-bg-surface border border-border-subtle text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-amber-400/40 focus:ring-1 focus:ring-amber-400/20 transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-bg-surface border border-border-default text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent-dim transition-colors resize-none"
         />
       </div>
 
       <button
         type="submit"
         id="support-submit"
-        className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-bg-primary font-semibold text-sm hover:from-amber-400 hover:to-amber-500 transition-all duration-300 shadow-lg shadow-amber-400/20 hover:shadow-amber-400/30 cursor-pointer"
+        className="w-full py-3 rounded-full bg-accent text-white font-semibold text-sm hover:bg-indigo-600 transition-all duration-300 shadow-sm shadow-indigo-500/20 cursor-pointer"
       >
         Open Email Draft
       </button>

@@ -23,6 +23,11 @@ export async function generateMetadata({
   return {
     title: `Terms of Service — ${app.name}`,
     description: `Terms of Service for ${app.name} by FSK Codehouse Corp. Last updated ${app.termsLastUpdated}.`,
+    openGraph: {
+      title: `Terms of Service — ${app.name}`,
+      description: `Terms of Service for ${app.name} by FSK Codehouse Corp.`,
+      images: [{ url: "/og-fsk.svg", width: 1200, height: 630 }],
+    },
   };
 }
 
@@ -37,7 +42,7 @@ export default async function TermsPage({ params }: { params: Params }) {
     <>
       <Navbar />
 
-      <main className="relative z-10 flex-grow pt-28 pb-20 px-6">
+      <main className="flex-grow px-5 pb-20 pt-28 sm:px-6 md:pt-36">
         <div className="max-w-3xl mx-auto">
           <div className="relative">
             {/* Breadcrumb */}
@@ -57,7 +62,7 @@ export default async function TermsPage({ params }: { params: Params }) {
             </nav>
 
             {/* Banner */}
-            <div className="rounded-2xl border border-border-default bg-bg-card p-6 md:p-8 mb-10">
+            <div className="rounded-2xl border border-border-default bg-bg-card p-6 md:p-8 mb-10 shadow-[var(--shadow-card)]">
               <div className="flex items-center gap-3 mb-3">
                 <svg
                   className="w-6 h-6 text-accent"

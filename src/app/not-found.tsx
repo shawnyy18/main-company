@@ -12,42 +12,24 @@ export default function NotFound() {
     <>
       <Navbar />
 
-      <main className="relative z-10 flex-grow flex items-center justify-center px-6 py-32">
-        <div className="text-center">
-          {/* Ambient glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] bg-amber-400/5 rounded-full blur-[100px] pointer-events-none" />
-
-          <div className="relative">
-            <p className="text-8xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-amber-400/30 to-amber-400/5 mb-6">
-              404
-            </p>
-            <h1 className="text-2xl md:text-3xl font-bold mb-4">
-              Page not found
-            </h1>
-            <p className="text-text-secondary text-sm mb-8 max-w-sm mx-auto">
-              The page you&apos;re looking for doesn&apos;t exist or has been
-              moved.
-            </p>
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-bg-primary font-semibold text-sm hover:from-amber-400 hover:to-amber-500 transition-all duration-300 shadow-lg shadow-amber-400/20"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                />
-              </svg>
-              Back to Home
-            </Link>
-          </div>
+      <main className="flex flex-grow items-center justify-center px-5 py-32 sm:px-6">
+        <div className="max-w-md rounded-2xl border border-border-default bg-bg-card p-8 text-center shadow-[var(--shadow-card)]">
+          <p className="mb-4 text-7xl font-semibold tracking-tight text-text-primary md:text-8xl">
+            404
+          </p>
+          <h1 className="mb-3 text-2xl font-semibold tracking-tight text-text-primary md:text-3xl">
+            Page not found
+          </h1>
+          <p className="mx-auto mb-8 text-sm leading-6 text-text-secondary">
+            The page you&apos;re looking for doesn&apos;t exist or has been
+            moved.
+          </p>
+          <Link
+            href="/"
+            className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-indigo-500/20 transition-all hover:-translate-y-0.5 hover:bg-indigo-600"
+          >
+            Back to home
+          </Link>
         </div>
       </main>
 

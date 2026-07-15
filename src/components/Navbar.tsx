@@ -3,94 +3,107 @@
 import Link from "next/link";
 import { useState } from "react";
 
+const navLinks = [
+  { href: "/#products", label: "Products" },
+  { href: "/about", label: "About" },
+  { href: "/#contact", label: "Contact" },
+];
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border-subtle backdrop-blur-xl bg-bg-primary/80">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 group"
-        >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-bg-primary font-bold text-sm transition-transform duration-300 group-hover:scale-110">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border-subtle bg-white/82 backdrop-blur-xl">
+      <nav
+        className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8"
+        aria-label="Main navigation"
+      >
+        <Link href="/" className="group flex items-center gap-3 rounded-md">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-text-primary text-sm font-semibold text-white shadow-sm transition-transform duration-200 group-hover:-translate-y-0.5">
             F
-          </div>
-          <span className="font-semibold text-text-primary tracking-tight text-[15px]">
+          </span>
+          <span className="text-[15px] font-semibold tracking-tight text-text-primary">
             FSK Codehouse
           </span>
         </Link>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden items-center gap-7 md:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-text-secondary transition-colors hover:text-text-primary"
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link
             href="/#products"
-            className="text-sm text-text-secondary hover:text-accent transition-colors duration-200"
+            className="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-indigo-500/20 transition-all hover:-translate-y-0.5 hover:bg-indigo-600"
           >
-            Products
-          </Link>
-          <Link
-            href="/about"
-            className="text-sm text-text-secondary hover:text-accent transition-colors duration-200"
-          >
-            About
-          </Link>
-          <Link
-            href="/#contact"
-            className="text-sm text-text-secondary hover:text-accent transition-colors duration-200"
-          >
-            Contact
+            View apps
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-default bg-white text-text-primary md:hidden"
+          onClick={() => setMobileOpen((open) => !open)}
           aria-label="Toggle navigation menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
           id="mobile-menu-toggle"
         >
-          <span
-            className={`block w-5 h-0.5 bg-text-secondary transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""}`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-text-secondary transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`block w-5 h-0.5 bg-text-secondary transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`}
-          />
+          <svg
+            className="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            aria-hidden="true"
+          >
+            {mobileOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 7h16M4 12h16M4 17h16"
+              />
+            )}
+          </svg>
         </button>
-      </div>
+      </nav>
 
-      {/* Mobile menu */}
       <div
-        className={`md:hidden border-t border-border-subtle bg-bg-primary/95 backdrop-blur-xl overflow-hidden transition-all duration-300 ${mobileOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}
+        id="mobile-menu"
+        className={`overflow-hidden border-t border-border-subtle bg-white/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
+          mobileOpen ? "max-h-72 opacity-100" : "max-h-0 opacity-0"
+        }`}
       >
-        <div className="px-6 py-4 flex flex-col gap-4">
+        <div className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              className="rounded-xl px-3 py-3 text-sm font-medium text-text-secondary transition-colors hover:bg-bg-surface hover:text-text-primary"
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link
             href="/#products"
             onClick={() => setMobileOpen(false)}
-            className="text-sm text-text-secondary hover:text-accent transition-colors"
+            className="mt-2 inline-flex items-center justify-center rounded-full bg-accent px-4 py-3 text-sm font-semibold text-white"
           >
-            Products
-          </Link>
-          <Link
-            href="/about"
-            onClick={() => setMobileOpen(false)}
-            className="text-sm text-text-secondary hover:text-accent transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="/#contact"
-            onClick={() => setMobileOpen(false)}
-            className="text-sm text-text-secondary hover:text-accent transition-colors"
-          >
-            Contact
+            View apps
           </Link>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

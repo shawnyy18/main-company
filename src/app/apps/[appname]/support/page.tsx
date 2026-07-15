@@ -23,6 +23,11 @@ export async function generateMetadata({
   return {
     title: `Support — ${app.name}`,
     description: `Get support for ${app.name} by FSK Codehouse Corp. Contact us at ${app.supportEmail}.`,
+    openGraph: {
+      title: `Support — ${app.name}`,
+      description: `Get support for ${app.name} by FSK Codehouse Corp.`,
+      images: [{ url: "/og-fsk.svg", width: 1200, height: 630 }],
+    },
   };
 }
 
@@ -35,7 +40,7 @@ export default async function SupportPage({ params }: { params: Params }) {
     <>
       <Navbar />
 
-      <main className="relative z-10 flex-grow pt-28 pb-20 px-6">
+      <main className="flex-grow px-5 pb-20 pt-28 sm:px-6 md:pt-36">
         <div className="max-w-2xl mx-auto">
           <div className="relative">
             {/* Breadcrumb */}
@@ -71,7 +76,7 @@ export default async function SupportPage({ params }: { params: Params }) {
                   />
                 </svg>
               </div>
-              <h1 className="text-2xl md:text-3xl font-bold mb-3">
+              <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">
                 {app.name} Support
               </h1>
               <p className="text-text-secondary text-sm max-w-md mx-auto">
@@ -81,7 +86,7 @@ export default async function SupportPage({ params }: { params: Params }) {
             </div>
 
             {/* Direct email */}
-            <div className="rounded-2xl border border-border-default bg-bg-card p-5 mb-8 flex items-center justify-between gap-4 flex-wrap">
+            <div className="rounded-2xl border border-border-default bg-bg-card p-5 mb-8 flex items-center justify-between gap-4 flex-wrap shadow-[var(--shadow-card)]">
               <div>
                 <p className="text-xs text-text-muted mb-1">
                   Email us directly
@@ -95,7 +100,7 @@ export default async function SupportPage({ params }: { params: Params }) {
               </div>
               <a
                 href={`mailto:${app.supportEmail}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent-dim border border-border-default text-accent text-sm font-medium hover:border-amber-400/40 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-white text-sm font-semibold hover:bg-indigo-600 transition-colors"
               >
                 <svg
                   className="w-4 h-4"
