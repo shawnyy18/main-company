@@ -1,37 +1,63 @@
 import Link from "next/link";
+import Image from "next/image";
 import { apps } from "@/lib/apps";
+import { companyLinks } from "@/lib/company";
 
 export default function Footer() {
   return (
     <footer className="border-t border-border-default bg-bg-surface">
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_0.8fr_0.8fr_1fr]">
           <div>
             <Link href="/" className="mb-4 flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-text-primary text-sm font-semibold text-white">
-                F
-              </span>
+              <Image
+                src="/fsk-logo-icon.png"
+                alt="FSK Codehouse Corp. logo"
+                width={36}
+                height={36}
+                className="h-9 w-9 rounded-xl object-cover"
+              />
               <span className="text-sm font-semibold tracking-tight text-text-primary">
                 FSK Codehouse Corp.
               </span>
             </Link>
             <p className="max-w-sm text-sm leading-6 text-text-secondary">
-              A Philippine-based software company building mobile apps and
-              digital products people actually use.
+              A Philippine software company building real-estate platforms,
+              digital commerce, and web and mobile products.
             </p>
           </div>
 
           <div>
             <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-text-muted">
-              Product
+              Company
             </h2>
             <div className="flex flex-col gap-3">
               <Link
-                href="/#products"
+                href="/#services"
                 className="text-sm text-text-secondary transition-colors hover:text-accent"
               >
-                Apps
+                Services
               </Link>
+              <Link
+                href="/#partnerships"
+                className="text-sm text-text-secondary transition-colors hover:text-accent"
+              >
+                Partnerships
+              </Link>
+              <Link
+                href="/about"
+                className="text-sm text-text-secondary transition-colors hover:text-accent"
+              >
+                About
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-text-muted">
+              Products
+            </h2>
+            <div className="flex flex-col gap-3">
               {apps.map((app) => (
                 <Link
                   key={app.slug}
@@ -73,12 +99,6 @@ export default function Footer() {
               Contact
             </h2>
             <div className="flex flex-col gap-3">
-              <Link
-                href="/about"
-                className="text-sm text-text-secondary transition-colors hover:text-accent"
-              >
-                About
-              </Link>
               <a
                 href="mailto:hello@fskcodehouse.com"
                 className="text-sm text-text-secondary transition-colors hover:text-accent"
@@ -86,11 +106,12 @@ export default function Footer() {
                 hello@fskcodehouse.com
               </a>
               <a
-                href="https://x.com"
-                className="text-sm text-text-muted transition-colors hover:text-accent"
-                aria-label="Social link placeholder"
+                href={companyLinks.linkedIn}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-text-secondary transition-colors hover:text-accent"
               >
-                Social slot
+                LinkedIn
               </a>
             </div>
           </div>

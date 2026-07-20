@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about FSK Codehouse Corp. — a Philippine-based software company building mobile apps and digital products people actually use.",
+    "Learn about FSK Codehouse Corp., a Philippine software company building real-estate systems, digital commerce, and web and mobile products.",
 };
 
 const values = [
@@ -38,19 +38,19 @@ export default function AboutPage() {
             About us
           </p>
           <h1 className="text-5xl font-semibold tracking-tight text-text-primary md:text-6xl">
-            We build focused apps with product-grade care.
+            We build useful software around real opportunities.
           </h1>
 
           <div className="mt-8 space-y-6 text-[17px] leading-8 text-text-secondary">
             <p>
-              FSK Codehouse Corp. is a Philippine-based software company that
-              builds mobile apps and digital products. We are a small, focused
-              team that believes in doing fewer things, but doing them well.
+              FSK Codehouse Corp. is a Philippine software company building
+              real-estate platforms, digital commerce experiences, and web and
+              mobile applications.
             </p>
             <p>
-              Every product starts with a practical question: would we use this
-              ourselves? That keeps the work honest, useful, and grounded in
-              real behavior.
+              We work in three ways: delivering software for clients, forming
+              selective product partnerships, and creating products owned and
+              operated by FSK Codehouse.
             </p>
             <p>
               We handle the full lifecycle from concept and design through
@@ -79,8 +79,8 @@ export default function AboutPage() {
               Work with us
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-[17px] leading-8 text-text-secondary">
-              Have an idea you want to bring to life? We would love to hear
-              where you are headed.
+              Have a property business, digital product, or application you
+              want to bring to market? Tell us where you are headed.
             </p>
             <a
               href="mailto:hello@fskcodehouse.com"

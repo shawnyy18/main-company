@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const navLinks = [
+  { href: "/#services", label: "Services" },
   { href: "/#products", label: "Products" },
+  { href: "/#partnerships", label: "Partnerships" },
   { href: "/about", label: "About" },
-  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -19,11 +21,16 @@ export default function Navbar() {
         aria-label="Main navigation"
       >
         <Link href="/" className="group flex items-center gap-3 rounded-md">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-text-primary text-sm font-semibold text-white shadow-sm transition-transform duration-200 group-hover:-translate-y-0.5">
-            F
-          </span>
+          <Image
+            src="/fsk-logo-icon.png"
+            alt="FSK Codehouse Corp. logo"
+            width={36}
+            height={36}
+            className="h-9 w-9 rounded-xl object-cover shadow-sm transition-transform duration-200 group-hover:-translate-y-0.5"
+            priority
+          />
           <span className="text-[15px] font-semibold tracking-tight text-text-primary">
-            FSK Codehouse
+            FSK Codehouse Corp.
           </span>
         </Link>
 
@@ -38,10 +45,10 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/#products"
+            href="/#contact"
             className="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-indigo-500/20 transition-all hover:-translate-y-0.5 hover:bg-indigo-600"
           >
-            View apps
+            Start a project
           </Link>
         </div>
 
@@ -96,11 +103,11 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/#products"
+            href="/#contact"
             onClick={() => setMobileOpen(false)}
             className="mt-2 inline-flex items-center justify-center rounded-full bg-accent px-4 py-3 text-sm font-semibold text-white"
           >
-            View apps
+            Start a project
           </Link>
         </div>
       </div>
