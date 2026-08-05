@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { apps } from "@/lib/apps";
 import { companyLinks } from "@/lib/company";
+import ManageCookiesButton from "@/components/ManageCookiesButton";
 
 export default function Footer() {
   return (
@@ -75,21 +76,27 @@ export default function Footer() {
               Legal
             </h2>
             <div className="flex flex-col gap-3">
+              <Link
+                href="/privacy"
+                className="text-sm text-text-secondary transition-colors hover:text-accent"
+              >
+                Website privacy
+              </Link>
+              <Link
+                href="/cookies"
+                className="text-sm text-text-secondary transition-colors hover:text-accent"
+              >
+                Cookie Policy
+              </Link>
+              <ManageCookiesButton />
               {apps.map((app) => (
-                <div key={app.slug} className="flex flex-col gap-3">
-                  <Link
-                    href={`/apps/${app.slug}/privacy`}
-                    className="text-sm text-text-secondary transition-colors hover:text-accent"
-                  >
-                    Privacy
-                  </Link>
-                  <Link
-                    href={`/apps/${app.slug}/terms`}
-                    className="text-sm text-text-secondary transition-colors hover:text-accent"
-                  >
-                    Terms
-                  </Link>
-                </div>
+                <Link
+                  key={app.slug}
+                  href={`/apps/${app.slug}/terms`}
+                  className="text-sm text-text-secondary transition-colors hover:text-accent"
+                >
+                  {app.name} terms
+                </Link>
               ))}
             </div>
           </div>
@@ -104,6 +111,14 @@ export default function Footer() {
                 className="text-sm text-text-secondary transition-colors hover:text-accent"
               >
                 hello@fskcodehouse.com
+              </a>
+              <a
+                href={companyLinks.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-text-secondary transition-colors hover:text-accent"
+              >
+                Facebook
               </a>
               <a
                 href={companyLinks.linkedIn}

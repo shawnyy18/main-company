@@ -30,12 +30,12 @@ export const apps: AppData[] = [
     platforms: ["ios"],
     iconColor: "sky",
     iconImage: "/lenso-icon.png",
-    privacyLastUpdated: "June 30, 2026",
+    privacyLastUpdated: "August 5, 2026",
     termsLastUpdated: "June 30, 2026",
     supportEmail: "support@fskcodehouse.com",
     privacyContent: `## Privacy Policy — Lenso
 
-**Effective date: June 30, 2026**
+**Effective date: August 5, 2026**
 **Company: FSK Codehouse Corp.**
 **Contact: privacy@fskcodehouse.com**
 
@@ -57,8 +57,26 @@ export const apps: AppData[] = [
 Lenso uses trusted service providers to run the app:
 - **Supabase** for authentication, database, realtime features, file storage, and backend functions.
 - **Apple** for iOS platform services, app distribution, push notifications, and any Apple sign-in or store services we enable.
+- **Google AdMob** for advertising shown to free accounts.
+- **RevenueCat** for subscription status, entitlements, and purchase restoration.
 
 We do not sell your personal information.
+
+### Advertising
+Lenso shows sponsored moments in the feed to free accounts. These ads are delivered by **Google AdMob**.
+
+- **What is shared with our ad partner:** an advertising identifier (only where you have permitted it), approximate region, and basic device and app information needed to request, display, and measure an ad.
+- **Personalized vs. non-personalized ads:** where you consent, ads may be personalized. Where you decline or consent is unavailable, you will see non-personalized ads instead.
+- **Measurement:** we and our ad partner use limited data to count impressions, detect invalid activity, and prevent fraud.
+- **Lenso Plus:** members, and anyone using an active complimentary pass, see no ads. No ad is requested for those accounts at all.
+
+### Tracking choices
+On iOS, Lenso asks for your permission through Apple's App Tracking Transparency prompt before any advertising identifier is used.
+
+- Declining does **not** limit any Lenso feature. The app works exactly the same; you simply see non-personalized ads.
+- In regions where consent is legally required, a consent form is presented before ads load.
+- You can review or change your advertising choices at any time from **Settings → Privacy Choices** in the app, or change tracking permission in **iOS Settings → Privacy & Security → Tracking**.
+- Google's processing of advertising data is governed by Google's own privacy policy.
 
 ### Photos, messages, and privacy
 Your photos, avatars, messages, and group media are stored in private buckets and protected by access controls. Content is intended to be visible only to the people or groups you send it to, plus FSK Codehouse systems and personnel when necessary for security, support, legal compliance, or abuse investigation.

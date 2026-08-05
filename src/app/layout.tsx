@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
 const inter = Inter({
@@ -67,6 +68,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col bg-bg-primary font-[family-name:var(--font-inter)]">
         {children}
+        <CookieConsent />
       </body>
     </html>
   );
