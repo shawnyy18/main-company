@@ -31,7 +31,7 @@ export const apps: AppData[] = [
     iconColor: "sky",
     iconImage: "/lenso-icon.png",
     privacyLastUpdated: "August 5, 2026",
-    termsLastUpdated: "June 30, 2026",
+    termsLastUpdated: "August 5, 2026",
     supportEmail: "support@fskcodehouse.com",
     privacyContent: `## Privacy Policy — Lenso
 
@@ -103,7 +103,7 @@ We may update this Privacy Policy as Lenso changes. The latest version will be p
 privacy@fskcodehouse.com`,
     termsContent: `## Terms of Service — Lenso
 
-**Effective date: June 30, 2026**
+**Effective date: August 5, 2026**
 **Governing law: Republic of the Philippines**
 **Company: FSK Codehouse Corp.**
 
@@ -133,7 +133,10 @@ We may remove content, limit features, suspend accounts, or terminate accounts t
 Lenso is designed for private sharing with accepted friends and groups. You should only send content to people you trust. Time capsules and scheduled features may depend on network access, device settings, backend jobs, and platform services, so exact delivery times are not guaranteed.
 
 ### Subscriptions & purchases
-If Lenso offers paid features, in-app purchases, or subscriptions, they will be processed by Apple or another applicable app-store provider. Refunds and billing issues are handled under that provider's policies unless applicable law requires otherwise.
+Lenso Plus is offered as monthly or yearly auto-renewable subscriptions, processed by Apple or another applicable app-store provider. Prices, duration, and any trial are shown before purchase and confirmed by Apple. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period, and can be managed or canceled through your Apple ID settings. Refunds and billing issues are handled under that provider's policies unless applicable law requires otherwise.
+
+### Advertising
+Free accounts see sponsored moments in the Lenso feed, delivered by Google AdMob. Lenso Plus members, and anyone using an active complimentary pass, see no ads. How advertising data is handled is described in our Privacy Policy, and you can review or change your advertising choices at any time from Settings → Privacy Choices in the app.
 
 ### Availability
 We work to keep Lenso reliable, but we do not guarantee uninterrupted, error-free, or permanent availability. Features may change, pause, or end as the product evolves.
