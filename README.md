@@ -16,6 +16,12 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Project inquiry form
+
+The landing-page form sends new leads through Resend. Copy `.env.example` to
+`.env.local`, then set `RESEND_API_KEY`, `LEADS_TO_EMAIL`, and
+`LEADS_FROM_EMAIL`. The sender address must use a domain verified in Resend.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

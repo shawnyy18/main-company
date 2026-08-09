@@ -3,7 +3,7 @@ import { apps } from "@/lib/apps";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AppCard from "@/components/AppCard";
-import { companyLinks } from "@/lib/company";
+import ProjectLeadForm from "@/components/ProjectLeadForm";
 
 const services = [
   {
@@ -75,7 +75,7 @@ export default function HomePage() {
                   Explore our services
                 </a>
                 <a
-                  href="mailto:hello@fskcodehouse.com?subject=Project inquiry"
+                  href="#contact"
                   className="inline-flex items-center justify-center rounded-full border border-border-default bg-white px-6 py-3 text-sm font-semibold text-text-primary transition-all hover:-translate-y-0.5 hover:border-indigo-200 hover:text-accent"
                 >
                   Start a conversation
@@ -193,8 +193,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="contact" className="px-5 pb-20 sm:px-6 md:pb-28 lg:px-8">
-          <div className="mx-auto max-w-7xl bg-accent px-7 py-10 text-white sm:px-10 md:flex md:items-center md:justify-between md:gap-10 md:px-14 md:py-14">
+        <section id="contact" className="scroll-mt-24 px-5 pb-20 sm:px-6 md:pb-28 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-10 bg-accent px-7 py-10 text-white sm:px-10 md:px-14 md:py-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-16">
             <div>
               <p className="text-sm font-semibold text-indigo-100">Start with the idea</p>
               <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
@@ -204,24 +204,18 @@ export default function HomePage() {
                 We&apos;ll help identify the right first version and a practical path
                 from concept to release.
               </p>
+              <p className="mt-7 text-sm leading-6 text-indigo-100">
+                Prefer email? Write to{" "}
+                <a
+                  className="font-semibold text-white underline underline-offset-4"
+                  href="mailto:hello@fskcodehouse.com?subject=Project%20inquiry"
+                >
+                  hello@fskcodehouse.com
+                </a>
+                .
+              </p>
             </div>
-            <div className="mt-7 flex shrink-0 flex-col gap-3 sm:flex-row md:mt-0 md:flex-col">
-              <a
-                href="mailto:hello@fskcodehouse.com?subject=Project inquiry"
-                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-accent transition-all hover:-translate-y-0.5 hover:bg-indigo-50"
-              >
-                hello@fskcodehouse.com
-              </a>
-              <a
-                href={companyLinks.linkedIn}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-white/10"
-                aria-label="Visit FSK Codehouse Corp. on LinkedIn"
-              >
-                Follow us on LinkedIn
-              </a>
-            </div>
+            <ProjectLeadForm />
           </div>
         </section>
       </main>
