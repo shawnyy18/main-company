@@ -46,6 +46,12 @@ export default function Footer() {
                 Partnerships
               </Link>
               <Link
+                href="/blog"
+                className="text-sm text-text-secondary transition-colors hover:text-accent"
+              >
+                Blog
+              </Link>
+              <Link
                 href="/about"
                 className="text-sm text-text-secondary transition-colors hover:text-accent"
               >

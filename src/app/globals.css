@@ -294,6 +294,404 @@ body {
   }
 }
 
+/* ==========================================================================
+   Blog
+   Scoped to .prose-article and blog-specific class names so nothing here can
+   affect the existing marketing pages or .prose-policy.
+   ========================================================================== */
+
+.blog-cover-placeholder {
+  background-color: var(--color-bg-surface);
+  background-image:
+    linear-gradient(rgba(15, 17, 21, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 17, 21, 0.045) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* --- Article typography --- */
+
+.prose-article {
+  color: var(--color-text-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+/* Only the very first element of the body loses its top margin. The body is
+   split into <div> sections for ad placement, so a broader selector here would
+   strip the top margin from every H2. */
+.prose-article > div:first-child > *:first-child {
+  margin-top: 0;
+}
+
+/* Long URLs and identifiers must wrap rather than widen the page. */
+.prose-article p,
+.prose-article li,
+.prose-article td,
+.prose-article th,
+.prose-article a {
+  overflow-wrap: break-word;
+}
+
+.prose-article p {
+  margin-bottom: 1.5rem;
+}
+
+.prose-article .article-heading {
+  color: var(--color-text-primary);
+  letter-spacing: -0.011em;
+  /* Clears the fixed 64px header when jumping to an anchor. */
+  scroll-margin-top: 6rem;
+}
+
+.prose-article h2.article-heading {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-top: 3.25rem;
+  margin-bottom: 1.125rem;
+}
+
+.prose-article h3.article-heading {
+  position: relative;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-top: 2.25rem;
+  margin-bottom: 0.875rem;
+}
+
+.prose-article h4.article-heading {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.heading-anchor {
+  position: absolute;
+  left: -1.25rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.article-heading:hover .heading-anchor,
+.heading-anchor:focus-visible {
+  opacity: 1;
+}
+
+/* The gutter for the anchor only exists on wide screens. */
+@media (max-width: 1023px) {
+  .heading-anchor {
+    display: none;
+  }
+}
+
+.prose-article strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.prose-article a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.prose-article a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.prose-article ul,
+.prose-article ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.4rem;
+}
+
+.prose-article ul {
+  list-style: disc;
+}
+
+.prose-article ol {
+  list-style: decimal;
+}
+
+.prose-article li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.prose-article li > ul,
+.prose-article li > ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-article li::marker {
+  color: var(--color-text-muted);
+}
+
+.prose-article hr {
+  border: 0;
+  border-top: 1px solid var(--color-border-default);
+  margin: 3rem 0;
+}
+
+.prose-article :not(pre) > code {
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 4px;
+  color: var(--color-text-primary);
+  font-size: 0.875em;
+  padding: 0.12em 0.36em;
+  overflow-wrap: break-word;
+}
+
+.article-quote {
+  border-left: 3px solid var(--color-accent);
+  margin: 2rem 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  color: var(--color-text-primary);
+  font-style: italic;
+}
+
+.article-quote p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Figures --- */
+
+.article-figure {
+  margin: 2.25rem 0;
+}
+
+.article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border-default);
+}
+
+.article-figure__caption {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* --- Callouts --- */
+
+.callout {
+  margin: 2rem 0;
+  border: 1px solid var(--color-border-default);
+  border-left-width: 3px;
+  background: var(--color-bg-surface);
+  padding: 1.125rem 1.25rem;
+}
+
+.callout__label {
+  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.callout__body > *:last-child {
+  margin-bottom: 0;
+}
+
+.callout__body p {
+  margin-bottom: 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.callout--note {
+  border-left-color: #4f46e5;
+}
+.callout--note .callout__label {
+  color: #4338ca;
+}
+
+.callout--tip {
+  border-left-color: #0d9488;
+}
+.callout--tip .callout__label {
+  color: #0f766e;
+}
+
+.callout--important {
+  border-left-color: #7c3aed;
+}
+.callout--important .callout__label {
+  color: #6d28d9;
+}
+
+.callout--warning,
+.callout--caution {
+  border-left-color: #d97706;
+}
+.callout--warning .callout__label,
+.callout--caution .callout__label {
+  color: #b45309;
+}
+
+/* --- Tables --- */
+
+.table-scroll {
+  margin: 2rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--color-border-default);
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table-scroll th,
+.table-scroll td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-subtle);
+  vertical-align: top;
+}
+
+.table-scroll th {
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table-scroll tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* --- Code blocks --- */
+
+.code-block {
+  margin: 2rem 0;
+  border: 1px solid #23262e;
+  background: #0f1115;
+  overflow: hidden;
+}
+
+.code-block__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0.75rem 0.5rem 1rem;
+  background: #161920;
+  border-bottom: 1px solid #23262e;
+}
+
+.code-block__label {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  color: #8b949e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.code-block__copy {
+  flex-shrink: 0;
+  border: 1px solid #2b2f39;
+  border-radius: 999px;
+  background: transparent;
+  color: #b1bac4;
+  cursor: pointer;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.7rem;
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
+}
+
+.code-block__copy:hover {
+  color: #ffffff;
+  border-color: #3d434f;
+  background: #21262e;
+}
+
+.code-block__copy[data-copied="true"] {
+  color: #7ee787;
+  border-color: #2ea04326;
+}
+
+.code-block__pre {
+  margin: 0;
+  padding: 1.125rem 1.25rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.code-block__code {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.8438rem;
+  line-height: 1.7;
+  color: #d7dae1;
+  white-space: pre;
+  tab-size: 2;
+}
+
+/* Syntax tokens */
+.tok-com {
+  color: #8b949e;
+  font-style: italic;
+}
+.tok-str {
+  color: #a5d6ff;
+}
+.tok-num,
+.tok-lit {
+  color: #79c0ff;
+}
+.tok-key {
+  color: #ff7b72;
+}
+.tok-typ {
+  color: #ffa657;
+}
+.tok-fn {
+  color: #d2a8ff;
+}
+.tok-prop,
+.tok-tag {
+  color: #7ee787;
+}
+.tok-var {
+  color: #ffa657;
+}
+.tok-pun {
+  color: #b1bac4;
+}
+
+/* --- Full-bleed elements --- */
+/* Wide content is allowed to break out of the reading measure on large
+   screens. The gutter is smaller than the article grid gap, so it can never
+   collide with the sticky table of contents. */
+@media (min-width: 1024px) {
+  .prose-article .code-block,
+  .prose-article .table-scroll,
+  .prose-article .article-figure {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

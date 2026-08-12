@@ -26,8 +26,9 @@ export const apps: AppData[] = [
     tagline: "Share moments. Stay close.",
     description:
       "A private photo-sharing and messaging app for close friends. Send real moments, keep up through a home screen widget, chat one-on-one or in groups, and schedule time capsules for later.",
-    status: "coming-soon",
+    status: "live",
     platforms: ["ios"],
+    appStoreUrl: "https://apps.apple.com/app/lenso-photo-widget-chat/id6786334500",
     iconColor: "sky",
     iconImage: "/lenso-icon.png",
     privacyLastUpdated: "August 5, 2026",

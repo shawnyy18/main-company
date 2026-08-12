@@ -292,11 +292,11 @@ export default async function AppPage({ params }: { params: Params }) {
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <h2 className="text-3xl font-semibold tracking-tight text-text-primary md:text-4xl">
-                  Get ready for {app.name}.
+                  Download {app.name} on iOS.
                 </h2>
                 <p className="mt-4 max-w-2xl text-[17px] leading-8 text-text-secondary">
-                  Lenso is preparing for launch on iOS. Follow the app page for
-                  privacy, terms, support, and App Store availability.
+                  Lenso is available through the App Store page. Review privacy,
+                  terms, and support details here whenever you need them.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-4 text-sm">
                   <Link

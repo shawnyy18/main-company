@@ -4,6 +4,8 @@ import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
+import { CONSENT_CHANGED_EVENT, CONSENT_COOKIE } from "@/lib/consent";
+
 export const COOKIE_SETTINGS_EVENT = "fsk:open-cookie-settings";
 
 type ConsentPreferences = {
@@ -13,9 +15,7 @@ type ConsentPreferences = {
   updatedAt: string;
 };
 
-const CONSENT_COOKIE = "fsk_cookie_consent";
 const SIX_MONTHS = 60 * 60 * 24 * 180;
-const CONSENT_CHANGED_EVENT = "fsk:cookie-consent-changed";
 
 function getConsentCookieValue() {
   return (
@@ -226,7 +226,8 @@ export default function CookieConsent() {
               <p className="mt-2 text-sm leading-6 text-text-secondary">
                 We use essential cookies to remember your choices. With your
                 permission, analytics helps us improve the site and marketing
-                cookies help us measure our campaigns. See our{" "}
+                cookies let us measure campaigns and show ads on our blog. See
+                our{" "}
                 <a className="text-accent underline" href="/cookies">
                   Cookie Policy
                 </a>
@@ -317,7 +318,7 @@ export default function CookieConsent() {
               />
               <PreferenceRow
                 title="Marketing"
-                description="Measures campaigns and helps us show more relevant FSK Codehouse ads."
+                description="Measures our campaigns and allows advertising on our blog, including cookies set by Google and its advertising partners."
                 checked={marketing}
                 onChange={setMarketing}
               />

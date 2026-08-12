@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import CookieConsent from "@/components/CookieConsent";
+import JsonLd from "@/components/JsonLd";
+import { organizationSchema } from "@/lib/blog/structured-data";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -27,7 +30,7 @@ export const metadata: Metadata = {
     "web applications",
   ],
   authors: [{ name: "FSK Codehouse Corp." }],
-  metadataBase: new URL("https://fskcodehouse.com"),
+  metadataBase: new URL(SITE_URL),
   icons: {
     icon: [{ url: "/fsk-logo-icon.png", type: "image/png" }],
     shortcut: "/fsk-logo-icon.png",
@@ -69,6 +72,10 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-bg-primary font-[family-name:var(--font-inter)]">
         {children}
         <CookieConsent />
+        {/* Site-wide publisher entity. Page-level schemas (BlogPosting,
+            Blog, CollectionPage) reference this node by @id instead of
+            repeating it. */}
+        <JsonLd data={organizationSchema()} />
       </body>
     </html>
   );

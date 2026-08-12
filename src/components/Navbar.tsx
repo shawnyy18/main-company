@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/#services", label: "Services" },
   { href: "/#products", label: "Products" },
   { href: "/#partnerships", label: "Partnerships" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ];
 
@@ -34,7 +35,10 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-7 md:flex">
+        {/* Adding "Blog" makes six items plus the CTA, which no longer fits
+            at 768px. The inline nav now starts at lg; tablets get the same
+            slide-down menu as phones. */}
+        <div className="hidden items-center gap-6 lg:flex xl:gap-7">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -53,7 +57,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-default bg-white text-text-primary md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-default bg-white text-text-primary lg:hidden"
           onClick={() => setMobileOpen((open) => !open)}
           aria-label="Toggle navigation menu"
           aria-expanded={mobileOpen}
@@ -87,8 +91,10 @@ export default function Navbar() {
 
       <div
         id="mobile-menu"
-        className={`overflow-hidden border-t border-border-subtle bg-white/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
-          mobileOpen ? "max-h-72 opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-hidden border-t border-border-subtle bg-white/95 backdrop-blur-xl transition-all duration-300 lg:hidden ${
+          // Tall enough for five links plus the CTA — max-h-72 clipped the
+          // last item once "Blog" was added.
+          mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4">
