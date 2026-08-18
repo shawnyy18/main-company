@@ -22,10 +22,10 @@ export async function generateMetadata({
   if (!app) return {};
   return {
     title: `Privacy Policy — ${app.name}`,
-    description: `Privacy Policy for ${app.name} by FSK Codehouse Corp. Last updated ${app.privacyLastUpdated}.`,
+    description: `Privacy Policy for ${app.name} by FSK Codehouse Last updated ${app.privacyLastUpdated}.`,
     openGraph: {
       title: `Privacy Policy — ${app.name}`,
-      description: `Privacy Policy for ${app.name} by FSK Codehouse Corp.`,
+      description: `Privacy Policy for ${app.name} by FSK Codehouse`,
       images: [{ url: "/og-fsk.svg", width: 1200, height: 630 }],
     },
   };
@@ -62,7 +62,7 @@ export default async function PrivacyPage({ params }: { params: Params }) {
             </nav>
 
             {/* Banner */}
-            <div className="rounded-2xl border border-border-default bg-bg-card p-6 md:p-8 mb-10 shadow-[var(--shadow-card)]">
+            <div className="border border-border-default bg-bg-card p-6 md:p-8 mb-10 shadow-[var(--shadow-card)]">
               <div className="flex items-center gap-3 mb-3">
                 <svg
                   className="w-6 h-6 text-accent"
@@ -82,7 +82,7 @@ export default async function PrivacyPage({ params }: { params: Params }) {
                 </h1>
               </div>
               <p className="text-sm text-text-muted">
-                by FSK Codehouse Corp. · Last updated{" "}
+                by FSK Codehouse · Last updated{" "}
                 {app.privacyLastUpdated}
               </p>
             </div>

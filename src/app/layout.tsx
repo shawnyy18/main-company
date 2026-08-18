@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import CookieConsent from "@/components/CookieConsent";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema } from "@/lib/blog/structured-data";
@@ -12,24 +12,34 @@ const inter = Inter({
   display: "swap",
 });
 
+/**
+ * Display face. Used only for headings via the `.display` class — body copy
+ * stays on Inter, so a slow font load can never delay reading text.
+ */
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
-    default: "FSK Codehouse Corp. — Software for real business.",
-    template: "%s | FSK Codehouse Corp.",
+    default: "FSK Codehouse — Real-estate platforms and mobile products.",
+    template: "%s | FSK Codehouse",
   },
   description:
-    "FSK Codehouse Corp. builds real-estate platforms, digital product storefronts, and web and mobile applications for clients, partners, and its own portfolio.",
+    "FSK Codehouse is a Philippine software studio building real-estate platforms and web and mobile applications for clients, partners, and its own portfolio.",
   keywords: [
     "FSK Codehouse",
     "mobile apps",
     "Philippines",
     "software company",
-    "digital products",
     "real estate websites",
     "listing management",
     "web applications",
   ],
-  authors: [{ name: "FSK Codehouse Corp." }],
+  authors: [{ name: "FSK Codehouse" }],
   metadataBase: new URL(SITE_URL),
   icons: {
     icon: [{ url: "/fsk-logo-icon.png", type: "image/png" }],
@@ -37,8 +47,8 @@ export const metadata: Metadata = {
     apple: "/fsk-logo-icon.png",
   },
   openGraph: {
-    title: "FSK Codehouse Corp.",
-    description: "Real-estate platforms, digital commerce, and web and mobile applications built for real business.",
+    title: "FSK Codehouse",
+    description: "Real-estate platforms and web and mobile applications, built in the Philippines.",
     type: "website",
     locale: "en_PH",
     images: [
@@ -46,14 +56,14 @@ export const metadata: Metadata = {
         url: "/og-fsk.svg",
         width: 1200,
         height: 630,
-        alt: "FSK Codehouse Corp.",
+        alt: "FSK Codehouse",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FSK Codehouse Corp.",
-    description: "Real-estate platforms, digital commerce, and web and mobile applications built for real business.",
+    title: "FSK Codehouse",
+    description: "Real-estate platforms and web and mobile applications, built in the Philippines.",
     images: ["/og-fsk.svg"],
   },
 };
@@ -67,7 +77,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${inter.variable} antialiased`}
+      className={`${inter.variable} ${instrument.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-bg-primary font-[family-name:var(--font-inter)]">
         {children}

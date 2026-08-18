@@ -6,7 +6,7 @@
  */
 export const SITE_URL = "https://fskcodehouse.com";
 
-export const SITE_NAME = "FSK Codehouse Corp.";
+export const SITE_NAME = "FSK Codehouse";
 
 export const SITE_CONTACT_EMAIL = "hello@fskcodehouse.com";
 

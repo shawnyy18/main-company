@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { apps } from "@/lib/apps";
+import { sortedProjects } from "@/lib/projects";
 import {
   categoryPath,
   getAllPosts,
@@ -20,6 +21,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: SITE_URL, lastModified: now, changeFrequency: "monthly", priority: 1 },
+    {
+      url: `${SITE_URL}/work`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     {
       url: `${SITE_URL}/about`,
       lastModified: now,
@@ -67,6 +74,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]);
 
+  const projectRoutes: MetadataRoute.Sitemap = sortedProjects.map((project) => ({
+    url: `${SITE_URL}/work/${project.slug}`,
+    lastModified: now,
+    changeFrequency: "yearly" as const,
+    priority: 0.8,
+  }));
+
   const [posts, categoriesInUse] = await Promise.all([
     getAllPosts(),
     getCategoriesInUse(),
@@ -93,5 +107,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ];
 
-  return [...staticRoutes, ...appRoutes, ...blogRoutes];
+  return [...staticRoutes, ...projectRoutes, ...appRoutes, ...blogRoutes];
 }

@@ -22,7 +22,7 @@ export default function CategoryBadge({
   const styles =
     tone === "inverted"
       ? "border-white/25 bg-white/10 text-white"
-      : "border-indigo-100 bg-accent-soft text-accent";
+      : "border-border-default bg-accent-soft text-accent";
 
   if (!asLink) {
     return <span className={`${base} ${styles}`}>{category.name}</span>;

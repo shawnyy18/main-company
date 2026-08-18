@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useState } from "react";
 
 const navLinks = [
+  { href: "/work", label: "Work" },
   { href: "/#services", label: "Services" },
   { href: "/#products", label: "Products" },
-  { href: "/#partnerships", label: "Partnerships" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ];
@@ -16,48 +16,47 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border-subtle bg-white/82 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border-default bg-bg-primary/85 backdrop-blur-xl">
       <nav
-        className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8"
+        className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6 lg:px-8"
         aria-label="Main navigation"
       >
-        <Link href="/" className="group flex items-center gap-3 rounded-md">
+        <Link href="/" className="group flex items-center gap-3">
           <Image
             src="/fsk-logo-icon.png"
-            alt="FSK Codehouse Corp. logo"
-            width={36}
-            height={36}
-            className="h-9 w-9 rounded-xl object-cover shadow-sm transition-transform duration-200 group-hover:-translate-y-0.5"
+            alt="FSK Codehouse logo"
+            width={32}
+            height={32}
+            className="h-8 w-8 object-cover"
             priority
           />
-          <span className="text-[15px] font-semibold tracking-tight text-text-primary">
-            FSK Codehouse Corp.
+          <span className="text-[15px] font-medium tracking-tight text-text-primary">
+            FSK Codehouse
           </span>
         </Link>
 
-        {/* Adding "Blog" makes six items plus the CTA, which no longer fits
-            at 768px. The inline nav now starts at lg; tablets get the same
-            slide-down menu as phones. */}
-        <div className="hidden items-center gap-6 lg:flex xl:gap-7">
+        {/* Six items plus the CTA no longer fit at 768px, so the inline nav
+            starts at lg; tablets get the same slide-down menu as phones. */}
+        <div className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-text-secondary transition-colors hover:text-text-primary"
+              className="text-sm text-text-secondary transition-colors hover:text-text-primary"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-indigo-500/20 transition-all hover:-translate-y-0.5 hover:bg-indigo-600"
+            className="inline-flex items-center justify-center bg-ink px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-text-secondary"
           >
             Start a project
           </Link>
         </div>
 
         <button
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-default bg-white text-text-primary lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center border border-border-default text-text-primary lg:hidden"
           onClick={() => setMobileOpen((open) => !open)}
           aria-label="Toggle navigation menu"
           aria-expanded={mobileOpen}
@@ -69,7 +68,7 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth={2}
+            strokeWidth={1.5}
             aria-hidden="true"
           >
             {mobileOpen ? (
@@ -91,19 +90,17 @@ export default function Navbar() {
 
       <div
         id="mobile-menu"
-        className={`overflow-hidden border-t border-border-subtle bg-white/95 backdrop-blur-xl transition-all duration-300 lg:hidden ${
-          // Tall enough for five links plus the CTA — max-h-72 clipped the
-          // last item once "Blog" was added.
+        className={`overflow-hidden border-t border-border-default bg-bg-primary transition-all duration-300 lg:hidden ${
           mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4">
+        <div className="mx-auto flex max-w-6xl flex-col px-5 py-3">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="rounded-xl px-3 py-3 text-sm font-medium text-text-secondary transition-colors hover:bg-bg-surface hover:text-text-primary"
+              className="border-b border-border-subtle py-3 text-sm text-text-secondary transition-colors hover:text-text-primary"
             >
               {link.label}
             </Link>
@@ -111,7 +108,7 @@ export default function Navbar() {
           <Link
             href="/#contact"
             onClick={() => setMobileOpen(false)}
-            className="mt-2 inline-flex items-center justify-center rounded-full bg-accent px-4 py-3 text-sm font-semibold text-white"
+            className="mt-4 inline-flex items-center justify-center bg-ink px-4 py-3 text-sm font-medium text-white"
           >
             Start a project
           </Link>

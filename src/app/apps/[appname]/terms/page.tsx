@@ -22,10 +22,10 @@ export async function generateMetadata({
   if (!app) return {};
   return {
     title: `Terms of Service — ${app.name}`,
-    description: `Terms of Service for ${app.name} by FSK Codehouse Corp. Last updated ${app.termsLastUpdated}.`,
+    description: `Terms of Service for ${app.name} by FSK Codehouse Last updated ${app.termsLastUpdated}.`,
     openGraph: {
       title: `Terms of Service — ${app.name}`,
-      description: `Terms of Service for ${app.name} by FSK Codehouse Corp.`,
+      description: `Terms of Service for ${app.name} by FSK Codehouse`,
       images: [{ url: "/og-fsk.svg", width: 1200, height: 630 }],
     },
   };
@@ -62,7 +62,7 @@ export default async function TermsPage({ params }: { params: Params }) {
             </nav>
 
             {/* Banner */}
-            <div className="rounded-2xl border border-border-default bg-bg-card p-6 md:p-8 mb-10 shadow-[var(--shadow-card)]">
+            <div className="border border-border-default bg-bg-card p-6 md:p-8 mb-10 shadow-[var(--shadow-card)]">
               <div className="flex items-center gap-3 mb-3">
                 <svg
                   className="w-6 h-6 text-accent"
@@ -82,7 +82,7 @@ export default async function TermsPage({ params }: { params: Params }) {
                 </h1>
               </div>
               <p className="text-sm text-text-muted">
-                by FSK Codehouse Corp. · Last updated{" "}
+                by FSK Codehouse · Last updated{" "}
                 {app.termsLastUpdated}
               </p>
             </div>

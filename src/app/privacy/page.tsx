@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Website Privacy Policy",
-  description: "How FSK Codehouse Corp. handles personal data on its website.",
+  description: "How FSK Codehouse handles personal data on its website.",
 };
 
 export default function WebsitePrivacyPage() {
@@ -27,16 +27,16 @@ export default function WebsitePrivacyPage() {
               Website Privacy Policy
             </h1>
             <p className="mt-3 text-sm text-text-muted">
-              FSK Codehouse Corp. · Last updated July 21, 2026
+              FSK Codehouse · Last updated July 21, 2026
             </p>
           </header>
 
           <p>
-            FSK Codehouse Corp. (&quot;FSK Codehouse,&quot; &quot;we,&quot;
+            FSK Codehouse (&quot;FSK Codehouse,&quot; &quot;we,&quot;
             &quot;us,&quot; or &quot;our&quot;)
             respects your privacy. This policy explains how we collect and use
             personal data when you visit fskcodehouse.com, contact us, request
-            services, or purchase a digital product from us.
+            services, or engage us for a project.
           </p>
 
           <h2>Information we collect</h2>
@@ -44,11 +44,6 @@ export default function WebsitePrivacyPage() {
             <li>
               Information you provide, such as your name, email address,
               company, project details, support requests, and communications.
-            </li>
-            <li>
-              Transaction details needed to fulfill digital product purchases.
-              Payment providers process payment card information under their
-              own privacy policies; we do not need to store full card details.
             </li>
             <li>
               Technical and usage data, such as pages viewed, approximate
@@ -60,7 +55,6 @@ export default function WebsitePrivacyPage() {
           <h2>How we use information</h2>
           <ul>
             <li>Respond to inquiries and provide requested services.</li>
-            <li>Process, deliver, and support digital product purchases.</li>
             <li>Operate, secure, measure, and improve our website.</li>
             <li>Measure advertising and understand campaign performance.</li>
             <li>Meet legal, accounting, and regulatory obligations.</li>
@@ -114,7 +108,7 @@ export default function WebsitePrivacyPage() {
 
           <h2>Contact us</h2>
           <p>
-            For privacy questions or requests, contact FSK Codehouse Corp. at{" "}
+            For privacy questions or requests, contact FSK Codehouse at{" "}
             <a href="mailto:hello@fskcodehouse.com">
               hello@fskcodehouse.com
             </a>

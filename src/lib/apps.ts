@@ -37,7 +37,7 @@ export const apps: AppData[] = [
     privacyContent: `## Privacy Policy — Lenso
 
 **Effective date: August 5, 2026**
-**Company: FSK Codehouse Corp.**
+**Company: FSK Codehouse**
 **Contact: privacy@fskcodehouse.com**
 
 ### Information we collect
@@ -95,7 +95,7 @@ We keep information for as long as needed to provide Lenso, comply with legal ob
 Lenso is not intended for children under 13. If you believe a child under 13 provided personal information, contact privacy@fskcodehouse.com so we can review and delete it where required.
 
 ### International transfers
-FSK Codehouse Corp. is based in the Philippines, and our providers may process information in other countries. We use reasonable safeguards required by applicable law.
+FSK Codehouse is based in the Philippines, and our providers may process information in other countries. We use reasonable safeguards required by applicable law.
 
 ### Changes
 We may update this Privacy Policy as Lenso changes. The latest version will be posted on this page with its effective date.
@@ -106,7 +106,7 @@ privacy@fskcodehouse.com`,
 
 **Effective date: August 5, 2026**
 **Governing law: Republic of the Philippines**
-**Company: FSK Codehouse Corp.**
+**Company: FSK Codehouse**
 
 ### Eligibility
 You must be at least 13 years old to use Lenso. If the law in your country requires a higher minimum age or parental consent, you must meet that requirement before using Lenso.
@@ -115,7 +115,7 @@ You must be at least 13 years old to use Lenso. If the law in your country requi
 You are responsible for the activity on your account and for keeping your login credentials secure. You must provide accurate information and may not impersonate another person or create accounts for abusive, deceptive, or illegal purposes.
 
 ### Your content
-You keep ownership of the photos, captions, messages, reactions, avatars, and other content you upload or send in Lenso. By using Lenso, you grant FSK Codehouse Corp. a limited, worldwide license to host, store, process, display, transmit, and operate that content solely to provide, secure, support, and improve Lenso.
+You keep ownership of the photos, captions, messages, reactions, avatars, and other content you upload or send in Lenso. By using Lenso, you grant FSK Codehouse a limited, worldwide license to host, store, process, display, transmit, and operate that content solely to provide, secure, support, and improve Lenso.
 
 You are responsible for the content you share and for having the rights and permissions needed to share it.
 
@@ -128,7 +128,7 @@ You may not use Lenso to:
 - Reverse engineer, scrape, spam, disrupt, or overload Lenso.
 - Use Lenso for unlawful commercial messaging or other illegal activity.
 
-We may remove content, limit features, suspend accounts, or terminate accounts that violate these terms or create risk for users, FSK Codehouse Corp., or the service.
+We may remove content, limit features, suspend accounts, or terminate accounts that violate these terms or create risk for users, FSK Codehouse, or the service.
 
 ### Friends, groups, messages, and time capsules
 Lenso is designed for private sharing with accepted friends and groups. You should only send content to people you trust. Time capsules and scheduled features may depend on network access, device settings, backend jobs, and platform services, so exact delivery times are not guaranteed.
@@ -143,7 +143,7 @@ Free accounts see sponsored moments in the Lenso feed, delivered by Google AdMob
 We work to keep Lenso reliable, but we do not guarantee uninterrupted, error-free, or permanent availability. Features may change, pause, or end as the product evolves.
 
 ### Disclaimers and liability
-Lenso is provided "as is" and "as available" to the fullest extent permitted by law. FSK Codehouse Corp. is not liable for indirect, incidental, special, consequential, or punitive damages, or for lost profits, data, goodwill, or other intangible losses, except where the law does not allow such limits.
+Lenso is provided "as is" and "as available" to the fullest extent permitted by law. FSK Codehouse is not liable for indirect, incidental, special, consequential, or punitive damages, or for lost profits, data, goodwill, or other intangible losses, except where the law does not allow such limits.
 
 ### Termination
 You may stop using Lenso at any time. We may suspend or terminate access if you violate these terms, create legal or safety risk, or misuse the service.

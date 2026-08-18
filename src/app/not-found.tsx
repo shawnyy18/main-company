@@ -13,7 +13,7 @@ export default function NotFound() {
       <Navbar />
 
       <main className="flex flex-grow items-center justify-center px-5 py-32 sm:px-6">
-        <div className="max-w-md rounded-2xl border border-border-default bg-bg-card p-8 text-center shadow-[var(--shadow-card)]">
+        <div className="max-w-md border border-border-default bg-bg-card p-8 text-center shadow-[var(--shadow-card)]">
           <p className="mb-4 text-7xl font-semibold tracking-tight text-text-primary md:text-8xl">
             404
           </p>
@@ -26,7 +26,7 @@ export default function NotFound() {
           </p>
           <Link
             href="/"
-            className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-indigo-500/20 transition-all hover:-translate-y-0.5 hover:bg-indigo-600"
+            className="inline-flex items-center justify-center bg-ink px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-text-secondary"
           >
             Back to home
           </Link>

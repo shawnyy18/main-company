@@ -11,8 +11,8 @@ export const authors: BlogAuthor[] = [
   {
     id: "fsk-team",
     name: "FSK Codehouse Team",
-    role: "Software team, FSK Codehouse Corp.",
-    bio: "FSK Codehouse Corp. is a Philippine software company building real-estate platforms, digital commerce, and web and mobile products for clients, partners, and its own portfolio.",
+    role: "Software team, FSK Codehouse",
+    bio: "FSK Codehouse is a Philippine software studio building real-estate platforms and web and mobile applications for clients, partners, and its own portfolio.",
     url: "/about",
   },
 ];

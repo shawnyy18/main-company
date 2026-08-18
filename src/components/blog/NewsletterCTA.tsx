@@ -68,7 +68,7 @@ export default function NewsletterCTA() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-indigo-600 disabled:opacity-60"
+          className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-text-secondary disabled:opacity-60"
         >
           {status === "submitting" ? "Subscribing…" : "Subscribe"}
         </button>

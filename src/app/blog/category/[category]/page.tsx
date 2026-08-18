@@ -108,7 +108,7 @@ export default async function BlogCategoryPage({ params }: { params: Params }) {
           >
             <Link
               href={BLOG_BASE_PATH}
-              className="inline-flex items-center rounded-full border border-border-default bg-bg-card px-3.5 py-2 text-sm font-medium text-text-secondary transition-colors hover:border-indigo-200 hover:text-accent"
+              className="inline-flex items-center rounded-full border border-border-default bg-bg-card px-3.5 py-2 text-sm font-medium text-text-secondary transition-colors hover:border-text-primary hover:text-accent"
             >
               All articles
             </Link>
@@ -118,7 +118,7 @@ export default async function BlogCategoryPage({ params }: { params: Params }) {
                 <Link
                   key={item.slug}
                   href={categoryPath(item.slug)}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border-default bg-bg-card px-3.5 py-2 text-sm font-medium text-text-secondary transition-colors hover:border-indigo-200 hover:text-accent"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border-default bg-bg-card px-3.5 py-2 text-sm font-medium text-text-secondary transition-colors hover:border-text-primary hover:text-accent"
                 >
                   {item.name}
                   <span className="text-text-muted">{item.count}</span>
@@ -140,7 +140,7 @@ export default async function BlogCategoryPage({ params }: { params: Params }) {
                 </p>
                 <Link
                   href={BLOG_BASE_PATH}
-                  className="mt-6 inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-600"
+                  className="mt-6 inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-text-secondary"
                 >
                   Browse all articles
                 </Link>

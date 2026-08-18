@@ -5,7 +5,7 @@ import { type FormEvent, useState } from "react";
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
 const fieldClass =
-  "mt-2 w-full rounded-xl border border-border-default bg-bg-surface px-4 py-3 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent-dim";
+  "mt-2 w-full border border-border-default bg-bg-primary px-4 py-3 text-sm text-text-primary placeholder:text-text-muted transition-colors focus:border-text-primary focus:outline-none";
 
 export default function ProjectLeadForm() {
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
@@ -46,7 +46,7 @@ export default function ProjectLeadForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-2xl bg-white p-6 text-text-primary shadow-2xl shadow-indigo-950/20 sm:p-8"
+      className="border border-border-default bg-bg-surface p-6 text-text-primary sm:p-8"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="text-sm font-medium text-text-secondary">
@@ -103,7 +103,6 @@ export default function ProjectLeadForm() {
               Choose a project type
             </option>
             <option>Real-estate website or listings</option>
-            <option>Digital product commerce</option>
             <option>Web or mobile application</option>
             <option>Product partnership</option>
             <option>Something else</option>
@@ -138,22 +137,22 @@ export default function ProjectLeadForm() {
       <button
         type="submit"
         disabled={submitState === "submitting"}
-        className="mt-6 inline-flex w-full cursor-pointer items-center justify-center rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-sm shadow-indigo-500/20 transition-all hover:-translate-y-0.5 hover:bg-indigo-600 disabled:cursor-wait disabled:opacity-65"
+        className="mt-6 inline-flex w-full cursor-pointer items-center justify-center bg-ink px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-text-secondary disabled:cursor-wait disabled:opacity-65"
       >
         {submitState === "submitting" ? "Sending…" : "Send project inquiry"}
       </button>
 
       <div className="mt-4 min-h-6 text-center text-sm" aria-live="polite">
         {submitState === "success" ? (
-          <p className="font-medium text-emerald-700">
+          <p className="font-medium text-text-primary">
             Thanks — your inquiry is in. We&apos;ll reply within two business days.
           </p>
         ) : null}
         {submitState === "error" ? (
-          <p className="text-red-700">
+          <p className="text-red-800">
             {errorMessage}{" "}
             <a
-              className="font-semibold underline underline-offset-2"
+              className="font-medium underline underline-offset-2"
               href="mailto:hello@fskcodehouse.com?subject=Project%20inquiry"
             >
               Email us instead

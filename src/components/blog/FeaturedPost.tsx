@@ -13,7 +13,7 @@ export default function FeaturedPost({ post }: { post: PostSummary }) {
     <article className="group">
       <Link
         href={postPath(post.slug)}
-        className="grid overflow-hidden border border-border-default bg-bg-card transition-colors hover:border-indigo-200 lg:grid-cols-[1.15fr_1fr]"
+        className="grid overflow-hidden border border-border-default bg-bg-card transition-colors hover:border-text-primary lg:grid-cols-[1.15fr_1fr]"
       >
         <CoverImage
           post={post}

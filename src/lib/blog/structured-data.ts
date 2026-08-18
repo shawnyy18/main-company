@@ -27,7 +27,7 @@ export function organizationSchema() {
       url: absoluteUrl("/fsk-logo-icon.png"),
     },
     description:
-      "FSK Codehouse Corp. is a Philippine software company building real-estate platforms, digital product storefronts, and web and mobile applications.",
+      "FSK Codehouse is a Philippine software studio building real-estate platforms and web and mobile applications.",
     sameAs: [
       "https://www.facebook.com/fskcodehouse",
       "https://www.linkedin.com/company/fsk-codehouse-corp/",

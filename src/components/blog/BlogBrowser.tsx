@@ -129,7 +129,7 @@ export default function BlogBrowser({
                 setQuery("");
                 setActiveCategory(ALL);
               }}
-              className="mt-6 inline-flex items-center justify-center rounded-full border border-border-default bg-white px-5 py-2.5 text-sm font-semibold text-text-primary transition-colors hover:border-indigo-200 hover:text-accent"
+              className="mt-6 inline-flex items-center justify-center rounded-full border border-border-default bg-white px-5 py-2.5 text-sm font-semibold text-text-primary transition-colors hover:border-text-primary hover:text-accent"
             >
               Clear filters
             </button>
@@ -159,7 +159,7 @@ function FilterPill({
       className={`inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3.5 py-2 text-sm font-medium transition-colors ${
         active
           ? "border-accent bg-accent text-white"
-          : "border-border-default bg-bg-card text-text-secondary hover:border-indigo-200 hover:text-accent"
+          : "border-border-default bg-bg-card text-text-secondary hover:border-text-primary hover:text-accent"
       }`}
     >
       {label}

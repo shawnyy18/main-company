@@ -65,7 +65,7 @@ export default function TableOfContents({
             } ${
               activeId === item.id
                 ? "border-accent font-medium text-accent"
-                : "border-border-default text-text-secondary hover:border-indigo-200 hover:text-text-primary"
+                : "border-border-default text-text-secondary hover:border-text-primary hover:text-text-primary"
             }`}
           >
             {item.text}

@@ -252,7 +252,7 @@ export default function CookieConsent() {
               <button
                 type="button"
                 onClick={() => save(newPreferences(true, true))}
-                className="w-full bg-accent px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigo-600 sm:w-auto"
+                className="w-full bg-ink px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-text-secondary sm:w-auto"
               >
                 Accept all
               </button>
@@ -335,7 +335,7 @@ export default function CookieConsent() {
               <button
                 type="button"
                 onClick={() => save(newPreferences(analytics, marketing))}
-                className="bg-accent px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-600"
+                className="bg-ink px-4 py-2.5 text-sm font-semibold text-white hover:bg-text-secondary"
               >
                 Save choices
               </button>
@@ -378,8 +378,8 @@ function PreferenceRow({
           disabled={disabled}
           onChange={(event) => onChange(event.target.checked)}
         />
-        <span className="block h-6 w-11 rounded-full bg-gray-300 transition-colors peer-checked:bg-accent peer-focus-visible:outline peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-indigo-300 peer-disabled:opacity-70" />
-        <span className="absolute left-1 top-1 h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-5" />
+        <span className="block h-6 w-11 bg-gray-300 transition-colors peer-checked:bg-accent peer-focus-visible:outline peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-text-primary peer-disabled:opacity-70" />
+        <span className="absolute left-1 top-1 h-4 w-4 bg-white shadow transition-transform peer-checked:translate-x-5" />
       </span>
     </label>
   );

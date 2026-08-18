@@ -24,7 +24,7 @@ export async function generateMetadata({
     title: `${app.name} — ${app.tagline}`,
     description: app.description,
     openGraph: {
-      title: `${app.name} by FSK Codehouse Corp.`,
+      title: `${app.name} by FSK Codehouse`,
       description: app.description,
       images: [
         {
@@ -155,7 +155,7 @@ export default async function AppPage({ params }: { params: Params }) {
                   )}
                   <div>
                     <span
-                      className={`mb-2 inline-flex rounded-full border px-2.5 py-1 text-[11px] font-semibold ${status.className}`}
+                      className={`mb-2 inline-flex border px-2.5 py-1 text-[11px] font-semibold ${status.className}`}
                     >
                       {status.label}
                     </span>
@@ -263,9 +263,9 @@ export default async function AppPage({ params }: { params: Params }) {
               {features.map((feature) => (
                 <article
                   key={feature.title}
-                  className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-[var(--shadow-card)]"
+                  className="border border-border-default bg-bg-card p-6 shadow-[var(--shadow-card)]"
                 >
-                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-50 text-sky-700">
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center bg-sky-50 text-sky-700">
                     <svg
                       className="h-5 w-5"
                       viewBox="0 0 24 24"
@@ -288,7 +288,7 @@ export default async function AppPage({ params }: { params: Params }) {
         </section>
 
         <section className="px-5 pb-20 sm:px-6 md:pb-28 lg:px-8">
-          <div className="mx-auto max-w-7xl rounded-2xl border border-border-default bg-bg-surface p-6 md:p-10">
+          <div className="mx-auto max-w-7xl border border-border-default bg-bg-surface p-6 md:p-10">
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <h2 className="text-3xl font-semibold tracking-tight text-text-primary md:text-4xl">
@@ -347,10 +347,10 @@ function StoreButton({
 }) {
   const content = (
     <div
-      className={`inline-flex min-w-[180px] items-center gap-3 rounded-full border px-5 py-3.5 text-left transition-all duration-300 ${
+      className={`inline-flex min-w-[180px] items-center gap-3 border px-5 py-3.5 text-left transition-all duration-300 ${
         disabled
           ? "cursor-not-allowed border-border-default bg-white text-text-muted opacity-70"
-          : "cursor-pointer border-text-primary bg-text-primary text-white hover:-translate-y-0.5 hover:bg-black"
+          : "cursor-pointer border-text-primary bg-text-primary text-white hover:bg-black"
       }`}
     >
       {platform === "ios" ? (

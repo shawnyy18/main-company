@@ -22,10 +22,10 @@ export async function generateMetadata({
   if (!app) return {};
   return {
     title: `Support — ${app.name}`,
-    description: `Get support for ${app.name} by FSK Codehouse Corp. Contact us at ${app.supportEmail}.`,
+    description: `Get support for ${app.name} by FSK Codehouse Contact us at ${app.supportEmail}.`,
     openGraph: {
       title: `Support — ${app.name}`,
-      description: `Get support for ${app.name} by FSK Codehouse Corp.`,
+      description: `Get support for ${app.name} by FSK Codehouse`,
       images: [{ url: "/og-fsk.svg", width: 1200, height: 630 }],
     },
   };
@@ -61,7 +61,7 @@ export default async function SupportPage({ params }: { params: Params }) {
 
             {/* Header */}
             <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-accent-dim border border-border-default mb-5">
+              <div className="inline-flex items-center justify-center w-14 h-14 bg-accent-dim border border-border-default mb-5">
                 <svg
                   className="w-7 h-7 text-accent"
                   fill="none"
@@ -86,7 +86,7 @@ export default async function SupportPage({ params }: { params: Params }) {
             </div>
 
             {/* Direct email */}
-            <div className="rounded-2xl border border-border-default bg-bg-card p-5 mb-8 flex items-center justify-between gap-4 flex-wrap shadow-[var(--shadow-card)]">
+            <div className="border border-border-default bg-bg-card p-5 mb-8 flex items-center justify-between gap-4 flex-wrap shadow-[var(--shadow-card)]">
               <div>
                 <p className="text-xs text-text-muted mb-1">
                   Email us directly
@@ -100,7 +100,7 @@ export default async function SupportPage({ params }: { params: Params }) {
               </div>
               <a
                 href={`mailto:${app.supportEmail}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-white text-sm font-semibold hover:bg-indigo-600 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-ink text-white text-sm font-semibold hover:bg-text-secondary transition-colors"
               >
                 <svg
                   className="w-4 h-4"

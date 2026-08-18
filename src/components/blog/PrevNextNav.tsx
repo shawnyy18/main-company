@@ -22,7 +22,7 @@ export default function PrevNextNav({
         <Link
           href={postPath(previous.slug)}
           rel="prev"
-          className="group border border-border-default bg-bg-card p-5 transition-colors hover:border-indigo-200 hover:bg-bg-card-hover"
+          className="group border border-border-default bg-bg-card p-5 transition-colors hover:border-text-primary hover:bg-bg-card-hover"
         >
           <span className="text-xs font-semibold uppercase tracking-[0.14em] text-text-muted">
             Previous
@@ -39,7 +39,7 @@ export default function PrevNextNav({
         <Link
           href={postPath(next.slug)}
           rel="next"
-          className="group border border-border-default bg-bg-card p-5 transition-colors hover:border-indigo-200 hover:bg-bg-card-hover sm:text-right"
+          className="group border border-border-default bg-bg-card p-5 transition-colors hover:border-text-primary hover:bg-bg-card-hover sm:text-right"
         >
           <span className="text-xs font-semibold uppercase tracking-[0.14em] text-text-muted">
             Next

@@ -16,7 +16,7 @@ import { formatPostDate } from "@/lib/blog/format";
  */
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "FSK Codehouse Corp. article";
+export const alt = "FSK Codehouse article";
 
 type Params = Promise<{ slug: string }>;
 
@@ -24,7 +24,7 @@ export default async function OpengraphImage({ params }: { params: Params }) {
   const { slug } = await params;
   const post = await getPostSummary(slug);
 
-  const title = post?.title ?? "FSK Codehouse Corp.";
+  const title = post?.title ?? "FSK Codehouse";
   const category = post?.category.name ?? "Blog";
   const meta = post
     ? `${formatPostDate(post.publishedAt)}  ·  ${post.readingMinutes} min read`
@@ -85,7 +85,7 @@ export default async function OpengraphImage({ params }: { params: Params }) {
           }}
         >
           <div style={{ display: "flex", color: "#ffffff", fontWeight: 600 }}>
-            FSK Codehouse Corp.
+            FSK Codehouse
           </div>
           <div style={{ display: "flex" }}>{meta}</div>
         </div>

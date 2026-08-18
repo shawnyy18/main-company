@@ -6,7 +6,7 @@ import ManageCookiesButton from "@/components/ManageCookiesButton";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
-  description: "How FSK Codehouse Corp. uses cookies and similar technologies.",
+  description: "How FSK Codehouse uses cookies and similar technologies.",
 };
 
 export default function CookiePolicyPage() {
@@ -28,7 +28,7 @@ export default function CookiePolicyPage() {
               Cookie Policy
             </h1>
             <p className="mt-3 text-sm text-text-muted">
-              FSK Codehouse Corp. · Last updated July 21, 2026
+              FSK Codehouse · Last updated July 21, 2026
             </p>
           </header>
 

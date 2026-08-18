@@ -47,7 +47,7 @@ const CTA_BY_CATEGORY: Record<string, { title: string; body: string; label: stri
 
 const DEFAULT_CTA = {
   title: "Have a project in mind?",
-  body: "FSK Codehouse builds real-estate platforms, digital commerce, and web and mobile applications. Tell us what you're trying to build.",
+  body: "FSK Codehouse builds real-estate platforms and web and mobile applications. Tell us what you're trying to build.",
   label: "Start a project",
 };
 
@@ -67,13 +67,13 @@ export default function ArticleCTA({ categorySlug }: { categorySlug?: string }) 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <Link
           href="/#contact"
-          className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-indigo-500/20 transition-all hover:-translate-y-0.5 hover:bg-indigo-600"
+          className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-text-secondary"
         >
           {cta.label}
         </Link>
         <Link
           href="/#services"
-          className="inline-flex items-center justify-center rounded-full border border-border-default bg-white px-6 py-3 text-sm font-semibold text-text-primary transition-all hover:-translate-y-0.5 hover:border-indigo-200 hover:text-accent"
+          className="inline-flex items-center justify-center rounded-full border border-border-default bg-white px-6 py-3 text-sm font-semibold text-text-primary transition-all hover:-translate-y-0.5 hover:border-text-primary hover:text-accent"
         >
           See what we do
         </Link>

@@ -1,30 +1,27 @@
-import Image from "next/image";
+import Link from "next/link";
 import { apps } from "@/lib/apps";
+import { featuredProjects } from "@/lib/projects";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AppCard from "@/components/AppCard";
+import ProjectRow from "@/components/ProjectRow";
 import ProjectLeadForm from "@/components/ProjectLeadForm";
+import Reveal from "@/components/Reveal";
+import WorkShowcase from "@/components/WorkShowcase";
 
 const services = [
   {
     number: "01",
-    title: "Real-estate websites & listing systems",
+    title: "Real-estate websites and listing systems",
     description:
-      "High-converting property websites, searchable listings, agent pages, inquiry flows, and the tools needed to keep inventory current.",
-    deliverables: ["Landing pages", "Listing management", "Lead capture"],
+      "Property sites, searchable inventory, agent pages, and the inquiry flow behind them. Built so listings can be kept current without a developer.",
+    deliverables: ["Listing management", "Agent pages", "Lead capture"],
   },
   {
     number: "02",
-    title: "Digital product commerce",
+    title: "Web and mobile applications",
     description:
-      "Focused storefronts for templates, downloads, memberships, and other digital goods, built around a clean buying experience.",
-    deliverables: ["Product storefronts", "Payments", "Digital delivery"],
-  },
-  {
-    number: "03",
-    title: "Web & mobile applications",
-    description:
-      "Production-ready software for clients, co-build partnerships, and FSK-owned ideas, from product strategy through launch and iteration.",
+      "Production software for clients, co-build partnerships, and FSK-owned ideas — from product strategy through launch and iteration.",
     deliverables: ["iOS apps", "Web platforms", "Product partnerships"],
   },
 ];
@@ -33,7 +30,7 @@ const engagementModels = [
   {
     label: "Build for you",
     title: "A clear scope, professionally delivered.",
-    text: "You own the business vision. We turn it into a polished website, commerce experience, or application.",
+    text: "You own the business vision. We turn it into a working website, catalogue, or application.",
   },
   {
     label: "Build with you",
@@ -51,71 +48,105 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
+      <Reveal />
 
       <main className="flex-grow">
-        <section className="overflow-hidden px-5 pb-16 pt-28 sm:px-6 md:pb-24 md:pt-36 lg:px-8">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
-            <div>
-              <p className="mb-6 inline-flex rounded-full border border-border-default bg-bg-surface px-3 py-1.5 text-xs font-semibold text-text-secondary">
-                Philippine software company · Built for real business
-              </p>
-              <h1 className="max-w-3xl text-5xl font-semibold tracking-tight text-text-primary sm:text-6xl lg:text-7xl">
-                We turn ideas into software people can use.
+        {/* Hero */}
+        <section className="px-5 pb-14 pt-28 sm:px-6 md:pb-20 md:pt-40 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <p className="eyebrow">001 — Philippines</p>
+            <div className="mt-6 grid gap-8 md:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] md:items-end md:gap-14">
+              <h1 className="display text-[3.25rem] text-text-primary sm:text-7xl lg:text-[5.75rem]">
+                Real-estate platforms and mobile products.
               </h1>
-              <p className="mt-6 max-w-2xl text-[17px] leading-8 text-text-secondary sm:text-lg">
-                FSK Codehouse builds real-estate platforms, digital product
-                storefronts, and web and mobile apps for clients, partners, and
-                our own portfolio.
-              </p>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="#services"
-                  className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-indigo-500/20 transition-all hover:-translate-y-0.5 hover:bg-indigo-600"
-                >
-                  Explore our services
-                </a>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-full border border-border-default bg-white px-6 py-3 text-sm font-semibold text-text-primary transition-all hover:-translate-y-0.5 hover:border-indigo-200 hover:text-accent"
-                >
-                  Start a conversation
-                </a>
+              <div className="md:pb-3">
+                <p className="text-[17px] leading-8 text-text-secondary">
+                  We build the systems businesses actually run on, and ship our
+                  own apps to the App Store.
+                </p>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <Link
+                    href="/work"
+                    className="inline-flex items-center justify-center bg-ink px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-text-secondary"
+                  >
+                    See the work
+                  </Link>
+                  <Link
+                    href="/#contact"
+                    className="inline-flex items-center justify-center border border-border-default px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:border-text-primary"
+                  >
+                    Start a project
+                  </Link>
+                </div>
               </div>
             </div>
 
-            <CompanyPreview />
+            <div className="mt-14 md:mt-16">
+              <WorkShowcase projects={featuredProjects} />
+            </div>
           </div>
         </section>
 
-        <section id="services" className="border-y border-border-default bg-bg-surface px-5 py-18 sm:px-6 md:py-24 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-12 grid gap-5 md:grid-cols-[1fr_0.7fr] md:items-end">
-              <div>
-                <p className="mb-3 text-sm font-semibold text-accent">What we do</p>
-                <h2 className="max-w-3xl text-3xl font-semibold tracking-tight text-text-primary md:text-5xl">
-                  Three focused ways we create value.
-                </h2>
-              </div>
-              <p className="max-w-xl text-sm leading-7 text-text-secondary md:justify-self-end md:text-base">
-                We combine product thinking, interface design, engineering, and
-                launch support. Every engagement starts with the business result,
-                not a list of technologies.
+        {/* Selected work */}
+        <section id="work" className="scroll-mt-20 px-5 py-14 sm:px-6 md:py-20 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <p className="eyebrow">002 — Selected work</p>
+              <Link
+                href="/work"
+                className="border-b border-border-default pb-0.5 text-sm text-text-secondary transition-colors hover:border-text-primary hover:text-text-primary"
+              >
+                All work
+              </Link>
+            </div>
+
+            <div className="reveal mt-10 border-b border-border-default">
+              {featuredProjects.map((project, index) => (
+                <ProjectRow key={project.slug} project={project} index={index} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Services */}
+        <section id="services" className="scroll-mt-20 px-5 py-14 sm:px-6 md:py-20 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <p className="eyebrow">003 — Services</p>
+            <div className="mt-6 grid gap-8 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-end md:gap-14">
+              <h2 className="display text-4xl text-text-primary md:text-6xl">
+                Two things, done properly.
+              </h2>
+              <p className="text-[15px] leading-7 text-text-secondary md:pb-2">
+                Every engagement starts with the business result, not a list of
+                technologies.
               </p>
             </div>
 
-            <div className="grid border-y border-border-default md:grid-cols-3 md:divide-x md:divide-border-default">
-              {services.map((service) => (
-                <article key={service.number} className="border-b border-border-default py-8 last:border-b-0 md:border-b-0 md:px-7 md:first:pl-0 md:last:pr-0">
-                  <p className="text-xs font-semibold text-accent">{service.number}</p>
-                  <h3 className="mt-5 text-xl font-semibold leading-7 text-text-primary">
+            <div className="reveal mt-12 grid border-t border-border-default md:grid-cols-2">
+              {services.map((service, index) => (
+                <article
+                  key={service.number}
+                  className={`border-b border-border-default py-9 md:border-b-0 ${
+                    index === 0
+                      ? "md:border-r md:pr-10"
+                      : "md:pl-10"
+                  }`}
+                >
+                  <p className="font-mono text-xs text-text-muted">
+                    {service.number}
+                  </p>
+                  <h3 className="display mt-4 text-2xl text-text-primary md:text-3xl">
                     {service.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-7 text-text-secondary">
+                  <p className="mt-4 text-[15px] leading-7 text-text-secondary">
                     {service.description}
                   </p>
-                  <div className="mt-7 flex flex-wrap gap-2">
+                  <div className="mt-6 flex flex-wrap gap-2">
                     {service.deliverables.map((deliverable) => (
-                      <span key={deliverable} className="rounded-full border border-border-default bg-white px-3 py-1.5 text-xs font-medium text-text-secondary">
+                      <span
+                        key={deliverable}
+                        className="border border-border-default px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-text-secondary"
+                      >
                         {deliverable}
                       </span>
                     ))}
@@ -126,27 +157,30 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="partnerships" className="px-5 py-18 sm:px-6 md:py-24 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <p className="mb-3 text-sm font-semibold text-accent">How we work</p>
-            <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-              <div>
-                <h2 className="text-3xl font-semibold tracking-tight text-text-primary md:text-5xl">
-                  The right model for the right idea.
-                </h2>
-                <p className="mt-5 text-[17px] leading-8 text-text-secondary">
-                  FSK Codehouse is both a software partner and a product company.
-                  That gives us room to deliver client work, form selective
-                  partnerships, and invest in products of our own.
-                </p>
-              </div>
-              <div className="divide-y divide-border-default border-y border-border-default">
+        {/* How we work */}
+        <section id="partnerships" className="scroll-mt-20 px-5 py-14 sm:px-6 md:py-20 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <p className="eyebrow">004 — How we work</p>
+            <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
+              <h2 className="display text-4xl text-text-primary md:text-5xl">
+                The right model for the right idea.
+              </h2>
+              <div className="reveal border-t border-border-default">
                 {engagementModels.map((model) => (
-                  <article key={model.label} className="grid gap-3 py-7 sm:grid-cols-[130px_1fr] sm:gap-7">
-                    <p className="text-xs font-semibold uppercase text-accent">{model.label}</p>
+                  <article
+                    key={model.label}
+                    className="grid gap-2 border-b border-border-default py-6 sm:grid-cols-[9rem_1fr] sm:gap-7"
+                  >
+                    <p className="font-mono text-[11px] uppercase tracking-wider text-text-muted">
+                      {model.label}
+                    </p>
                     <div>
-                      <h3 className="text-lg font-semibold text-text-primary">{model.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-text-secondary">{model.text}</p>
+                      <h3 className="text-lg font-medium text-text-primary">
+                        {model.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-text-secondary">
+                        {model.text}
+                      </p>
                     </div>
                   </article>
                 ))}
@@ -155,22 +189,24 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="products" className="bg-[#111318] px-5 py-18 text-white sm:px-6 md:py-24 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-              <div>
-                <p className="mb-3 text-sm font-semibold text-amber-300">FSK products</p>
-                <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
-                  Software we believe should exist.
-                </h2>
-              </div>
-              <p className="max-w-md text-sm leading-7 text-white/60 md:text-base">
-                Our owned products keep us close to the realities of launching,
-                supporting, and growing software, not just delivering it.
+        {/* Products */}
+        <section id="products" className="scroll-mt-20 bg-ink px-5 py-16 text-white sm:px-6 md:py-24 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/45">
+              005 — FSK products
+            </p>
+            <div className="mt-6 grid gap-6 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-end md:gap-14">
+              <h2 className="display text-4xl md:text-6xl">
+                Software we own and operate.
+              </h2>
+              <p className="text-[15px] leading-7 text-white/60 md:pb-2">
+                Running our own products keeps us close to the realities of
+                launching, supporting, and growing software — not just
+                delivering it.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {apps.map((app) => (
                 <AppCard key={app.slug} app={app} />
               ))}
@@ -178,153 +214,60 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="px-5 py-16 sm:px-6 md:py-20 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-8 border-b border-border-default pb-16 md:grid-cols-[1.35fr_0.65fr] md:items-end md:pb-20">
+        {/* Credibility */}
+        <section className="px-5 py-14 sm:px-6 md:py-20 lg:px-8">
+          <div className="mx-auto grid max-w-6xl gap-8 border-y border-border-default py-10 sm:grid-cols-3">
             <div>
-              <p className="text-sm font-semibold text-accent">One accountable team</p>
-              <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-text-primary md:text-4xl">
-                Strategy, design, engineering, and launch stay connected.
-              </h2>
+              <p className="eyebrow">Registered</p>
+              <p className="mt-3 text-[15px] leading-7 text-text-secondary">
+                DTI registered business · BN No. 8395635 · Valid to August 2031
+              </p>
             </div>
-            <p className="text-sm leading-7 text-text-secondary md:text-base">
-              We keep the work close to the people making it, communicate clearly,
-              and build foundations that can improve after launch.
-            </p>
+            <div>
+              <p className="eyebrow">Based in</p>
+              <p className="mt-3 text-[15px] leading-7 text-text-secondary">
+                The Philippines, working with clients across time zones
+              </p>
+            </div>
+            <div>
+              <p className="eyebrow">Shipping since</p>
+              <p className="mt-3 text-[15px] leading-7 text-text-secondary">
+                Live client sites and an app on the App Store
+              </p>
+            </div>
           </div>
         </section>
 
-        <section id="contact" className="scroll-mt-24 px-5 pb-20 sm:px-6 md:pb-28 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-10 bg-accent px-7 py-10 text-white sm:px-10 md:px-14 md:py-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-16">
-            <div>
-              <p className="text-sm font-semibold text-indigo-100">Start with the idea</p>
-              <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-                Tell us what you want to launch, improve, or sell.
-              </h2>
-              <p className="mt-4 max-w-2xl text-[17px] leading-8 text-indigo-100">
-                We&apos;ll help identify the right first version and a practical path
-                from concept to release.
-              </p>
-              <p className="mt-7 text-sm leading-6 text-indigo-100">
-                Prefer email? Write to{" "}
-                <a
-                  className="font-semibold text-white underline underline-offset-4"
-                  href="mailto:hello@fskcodehouse.com?subject=Project%20inquiry"
-                >
-                  hello@fskcodehouse.com
-                </a>
-                .
-              </p>
+        {/* Contact */}
+        <section id="contact" className="scroll-mt-20 px-5 pb-24 sm:px-6 md:pb-28 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <p className="eyebrow">006 — Start here</p>
+            <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-16">
+              <div>
+                <h2 className="display text-4xl text-text-primary md:text-5xl">
+                  Tell us what you want to launch or improve.
+                </h2>
+                <p className="mt-5 text-[17px] leading-8 text-text-secondary">
+                  We&apos;ll help identify the right first version and a
+                  practical path from concept to release.
+                </p>
+                <p className="mt-7 text-sm leading-6 text-text-secondary">
+                  Prefer email?{" "}
+                  <a
+                    className="border-b border-text-primary pb-0.5 text-text-primary"
+                    href="mailto:hello@fskcodehouse.com?subject=Project%20inquiry"
+                  >
+                    hello@fskcodehouse.com
+                  </a>
+                </p>
+              </div>
+              <ProjectLeadForm />
             </div>
-            <ProjectLeadForm />
           </div>
         </section>
       </main>
 
       <Footer />
     </>
-  );
-}
-
-function CompanyPreview() {
-  return (
-    <div className="company-preview relative mx-auto w-full max-w-[650px]" aria-label="Animated preview of FSK Codehouse services">
-      <div className="relative overflow-hidden border border-white/10 bg-[#111318] shadow-[0_28px_80px_rgba(15,17,21,0.2)]">
-        <div className="flex items-center justify-between border-b border-white/10 px-5 py-4 sm:px-6">
-          <div className="flex items-center gap-3">
-            <div className="codehouse-mark relative flex h-11 w-11 items-center justify-center">
-              <span className="codehouse-mark-ring" />
-              <Image src="/fsk-logo-icon.png" alt="" width={36} height={36} className="relative z-10 h-9 w-9 object-cover" priority />
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-white">FSK Codehouse</p>
-              <p className="text-xs text-white/45">Ideas → useful products</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 text-xs font-medium text-emerald-200">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-300" />
-            Building
-          </div>
-        </div>
-
-        <div className="grid min-h-[430px] sm:grid-cols-[150px_1fr]">
-          <div className="flex border-b border-white/10 sm:block sm:border-b-0 sm:border-r">
-            {[
-              ["01", "Property"],
-              ["02", "Commerce"],
-              ["03", "Applications"],
-            ].map(([number, label], index) => (
-              <div key={label} className={`preview-service preview-service-${index + 1} flex flex-1 items-center gap-2 border-r border-white/10 px-3 py-4 last:border-r-0 sm:border-b sm:border-r-0 sm:px-4 sm:py-5`}>
-                <span className="text-[10px] font-semibold text-white/30">{number}</span>
-                <span className="text-xs font-medium text-white/55">{label}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="relative min-h-[370px] overflow-hidden bg-[#171a20] p-4 sm:p-6">
-            <div className="preview-grid absolute inset-0 opacity-30" />
-
-            <div className="preview-window preview-property absolute inset-x-4 top-5 z-10 overflow-hidden border border-white/10 bg-white shadow-2xl sm:inset-x-8">
-              <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
-                <div className="h-2.5 w-20 bg-slate-900" />
-                <div className="flex gap-2"><span className="h-2 w-8 bg-slate-200" /><span className="h-2 w-8 bg-slate-200" /></div>
-              </div>
-              <div className="grid grid-cols-[1.15fr_0.85fr]">
-                <div className="bg-[#dfe8e3] p-4 sm:p-5">
-                  <p className="text-[10px] font-semibold uppercase text-emerald-800">Featured property</p>
-                  <p className="mt-2 text-lg font-semibold leading-5 text-slate-900">Find a place that feels right.</p>
-                  <div className="mt-4 flex h-8 items-center bg-white px-3 text-[9px] text-slate-400">City, property, or neighborhood</div>
-                </div>
-                <div className="relative overflow-hidden bg-[#b8c5bc]">
-                  <div className="absolute bottom-0 left-[18%] h-[72%] w-[66%] bg-white/80" />
-                  <div className="absolute bottom-0 left-[27%] h-[54%] w-[10%] bg-slate-700" />
-                  <div className="absolute bottom-[24%] right-[28%] h-8 w-8 bg-sky-200" />
-                </div>
-              </div>
-              <div className="grid grid-cols-3 gap-2 p-3">
-                {["₱4.8M", "₱7.2M", "₱12M"].map((price) => <div key={price} className="border border-slate-100 p-2"><div className="mb-2 h-9 bg-slate-100" /><p className="text-[9px] font-semibold text-slate-700">{price}</p></div>)}
-              </div>
-            </div>
-
-            <div className="preview-window preview-commerce absolute inset-x-4 top-5 z-20 overflow-hidden border border-white/10 bg-[#fffaf2] shadow-2xl sm:inset-x-8">
-              <div className="flex items-center justify-between border-b border-amber-100 px-4 py-3">
-                <p className="text-[10px] font-bold text-slate-900">NORTH / MARKET</p>
-                <div className="h-5 w-5 rounded-full bg-amber-300" />
-              </div>
-              <div className="grid grid-cols-[0.9fr_1.1fr] p-4 sm:p-5">
-                <div className="pr-3">
-                  <p className="text-[9px] font-semibold uppercase text-amber-700">Digital collection</p>
-                  <p className="mt-2 text-lg font-semibold leading-5 text-slate-900">Tools made to move ideas forward.</p>
-                  <div className="mt-4 inline-flex bg-slate-900 px-3 py-2 text-[9px] font-semibold text-white">Browse products</div>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  <div className="bg-[#e3d8ff] p-3"><div className="mx-auto h-16 w-12 bg-white shadow-sm" /><p className="mt-2 text-[8px] font-semibold text-slate-700">Brand Kit</p></div>
-                  <div className="bg-[#cdebdc] p-3"><div className="mx-auto h-16 w-12 bg-slate-800 shadow-sm" /><p className="mt-2 text-[8px] font-semibold text-slate-700">Planner</p></div>
-                </div>
-              </div>
-              <div className="mx-4 mb-4 flex items-center justify-between border-t border-amber-100 pt-3 text-[9px] text-slate-500"><span>Instant access</span><span>Secure checkout</span><span>Built to scale</span></div>
-            </div>
-
-            <div className="preview-window preview-app absolute inset-x-4 top-5 z-30 flex min-h-[285px] items-center justify-center overflow-hidden border border-white/10 bg-[#eaf4ff] shadow-2xl sm:inset-x-8">
-              <div className="absolute left-5 top-5 max-w-[145px]">
-                <p className="text-[9px] font-semibold uppercase text-indigo-700">Mobile product</p>
-                <p className="mt-2 text-lg font-semibold leading-5 text-slate-900">A focused app, ready for real users.</p>
-                <div className="mt-4 flex gap-2"><span className="h-2 w-10 bg-indigo-400" /><span className="h-2 w-6 bg-amber-400" /></div>
-              </div>
-              <div className="absolute -bottom-8 right-7 h-[250px] w-[124px] rounded-[24px] border-[5px] border-slate-900 bg-white p-2 shadow-xl">
-                <div className="mx-auto mb-3 h-2 w-10 rounded-full bg-slate-900" />
-                <div className="h-20 bg-gradient-to-br from-indigo-400 to-sky-300 p-3"><div className="h-5 w-5 bg-white/80" /></div>
-                <div className="mt-3 space-y-2"><div className="h-2 w-16 bg-slate-800" /><div className="h-2 w-20 bg-slate-200" /><div className="h-2 w-12 bg-slate-200" /></div>
-                <div className="mt-4 grid grid-cols-2 gap-2"><div className="h-11 bg-amber-200" /><div className="h-11 bg-indigo-100" /></div>
-              </div>
-            </div>
-
-            <div className="absolute bottom-4 left-4 z-40 flex items-center gap-2 bg-[#111318] px-3 py-2 text-[10px] font-medium text-white shadow-lg sm:left-6">
-              <span className="preview-status-dot h-2 w-2 rounded-full bg-emerald-300" />
-              Designed. Built. Ready to grow.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }

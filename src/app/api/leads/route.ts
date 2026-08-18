@@ -1,6 +1,5 @@
 const ALLOWED_PROJECT_TYPES = new Set([
   "Real-estate website or listings",
-  "Digital product commerce",
   "Web or mobile application",
   "Product partnership",
   "Something else",

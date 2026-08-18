@@ -23,7 +23,7 @@ export default function BlogCard({
     <article className="group h-full">
       <Link
         href={postPath(post.slug)}
-        className="flex h-full flex-col border border-border-default bg-bg-card transition-colors hover:border-indigo-200 hover:bg-bg-card-hover"
+        className="flex h-full flex-col border border-border-default bg-bg-card transition-colors hover:border-text-primary hover:bg-bg-card-hover"
       >
         <CoverImage post={post} sizes={sizes} className="border-0 border-b" />
 
