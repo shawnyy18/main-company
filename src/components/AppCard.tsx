@@ -35,7 +35,7 @@ export default function AppCard({ app }: { app: AppData }) {
             {app.name.charAt(0)}
           </div>
         )}
-        <span className="border border-white/20 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-white/70">
+        <span className="border border-white/20 px-2.5 py-1 font-mono text-[11px] uppercase tracking-wider text-white/70">
           {status}
         </span>
       </div>
@@ -59,7 +59,7 @@ export default function AppCard({ app }: { app: AppData }) {
 
 function PlatformBadge({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center border border-white/20 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-white/60">
+    <span className="inline-flex items-center border border-white/20 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-white/60">
       {label}
     </span>
   );

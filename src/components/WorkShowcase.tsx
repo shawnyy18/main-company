@@ -98,7 +98,7 @@ export default function WorkShowcase({ projects }: { projects: ProjectData[] }) 
             <span className="h-2.5 w-2.5 bg-accent-bright" />
             <span className="h-2.5 w-2.5 bg-accent-blue" />
           </span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-white/45">
+          <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/45">
             Shipped work
           </span>
         </div>

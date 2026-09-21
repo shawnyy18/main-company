@@ -65,7 +65,7 @@ export default async function CaseStudyPage({
               <p className="eyebrow">
                 {project.category} · {project.year}
               </p>
-              <h1 className="display mt-5 text-5xl text-text-primary md:text-7xl">
+              <h1 className="display mt-6 text-[3.25rem] text-text-primary md:text-[5.25rem]">
                 {project.name}
               </h1>
               {project.client ? (
@@ -76,7 +76,7 @@ export default async function CaseStudyPage({
             </div>
 
             <div className="md:pt-12">
-              <p className="text-[17px] leading-8 text-text-secondary">
+              <p className="lede">
                 {project.summary}
               </p>
               {project.liveUrl ? (
@@ -84,7 +84,7 @@ export default async function CaseStudyPage({
                   href={project.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-block border-b border-text-primary pb-0.5 text-sm text-text-primary transition-colors hover:border-accent-bright"
+                  className="mt-6 inline-block border-b border-text-primary pb-0.5 text-[15px] text-text-primary transition-colors hover:border-accent-bright"
                 >
                   Visit the live site ↗
                 </a>
@@ -109,10 +109,10 @@ export default async function CaseStudyPage({
           ) : null}
 
           <div className="grid gap-12 py-14 md:grid-cols-[minmax(0,0.4fr)_minmax(0,1fr)] md:gap-16">
-            <h2 className="display text-3xl text-text-primary md:text-4xl">
+            <h2 className="display text-[2rem] text-text-primary md:text-[2.5rem]">
               The problem
             </h2>
-            <p className="text-[17px] leading-8 text-text-secondary">
+            <p className="lede">
               {project.problem}
             </p>
           </div>
@@ -131,14 +131,14 @@ export default async function CaseStudyPage({
           ) : null}
 
           <div className="grid gap-12 py-14 md:grid-cols-[minmax(0,0.4fr)_minmax(0,1fr)] md:gap-16">
-            <h2 className="display text-3xl text-text-primary md:text-4xl">
+            <h2 className="display text-[2rem] text-text-primary md:text-[2.5rem]">
               What we built
             </h2>
             <ul className="border-t border-border-default">
               {project.built.map((item) => (
                 <li
                   key={item}
-                  className="border-b border-border-default py-4 text-[15px] leading-7 text-text-secondary"
+                  className="border-b border-border-default py-4 text-[16.5px] leading-[1.7] text-text-secondary"
                 >
                   {item}
                 </li>
@@ -166,7 +166,7 @@ export default async function CaseStudyPage({
           ) : null}
 
           <div className="grid gap-12 border-t border-border-default py-14 md:grid-cols-[minmax(0,0.4fr)_minmax(0,1fr)] md:gap-16">
-            <h2 className="display text-3xl text-text-primary md:text-4xl">
+            <h2 className="display text-[2rem] text-text-primary md:text-[2.5rem]">
               Built with
             </h2>
             <div className="flex flex-wrap gap-2">
@@ -183,10 +183,10 @@ export default async function CaseStudyPage({
 
           {project.outcome ? (
             <div className="grid gap-12 border-t border-border-default py-14 md:grid-cols-[minmax(0,0.4fr)_minmax(0,1fr)] md:gap-16">
-              <h2 className="display text-3xl text-text-primary md:text-4xl">
+              <h2 className="display text-[2rem] text-text-primary md:text-[2.5rem]">
                 Outcome
               </h2>
-              <p className="text-[17px] leading-8 text-text-secondary">
+              <p className="lede">
                 {project.outcome}
               </p>
             </div>
@@ -212,7 +212,7 @@ export default async function CaseStudyPage({
               </h2>
               <Link
                 href="/#contact"
-                className="mt-6 inline-flex items-center justify-center bg-ink px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-text-secondary"
+                className="mt-6 inline-flex items-center justify-center bg-ink px-7 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-text-secondary"
               >
                 Start a project
               </Link>

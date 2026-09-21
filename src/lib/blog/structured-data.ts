@@ -1,4 +1,5 @@
 import { SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/site";
+import { packages } from "@/lib/packages";
 
 import { BLOG_BASE_PATH, postPath, toIsoTimestamp } from "./format";
 import type { PostSummary } from "./types";
@@ -120,5 +121,54 @@ export function collectionPageSchema({
         name: post.title,
       })),
     },
+  };
+}
+
+/**
+ * Pricing page schema.
+ *
+ * Lives here so every schema builder stays in one file and references the same
+ * ORGANIZATION_ID. Offers carry real PHP prices — that is what produces price
+ * ranges in search results. Tiers with a null price are quoted privately and
+ * are represented without a price rather than with a fabricated one.
+ */
+export function pricingOfferSchema() {
+  const priced = packages.filter(
+    (tier): tier is typeof tier & { price: number } => tier.price !== null,
+  );
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE_URL}/pricing#service`,
+    name: "Website design and development",
+    serviceType: "Web design and development",
+    provider: { "@id": ORGANIZATION_ID },
+    areaServed: { "@type": "Country", name: "Philippines" },
+    url: absoluteUrl("/pricing"),
+    offers: priced.map((tier) => ({
+      "@type": "Offer",
+      name: tier.name,
+      description: tier.bestFor,
+      price: tier.price,
+      priceCurrency: "PHP",
+      url: `${absoluteUrl("/pricing")}#${tier.slug}`,
+      availability: "https://schema.org/InStock",
+    })),
+  };
+}
+
+export function pricingFaqSchema(
+  faqs: { question: string; answer: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${SITE_URL}/pricing#faq`,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
   };
 }

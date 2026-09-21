@@ -1,6 +1,11 @@
+// Must stay in sync with the <option> list in ProjectLeadForm.tsx. The route
+// validates against this set, so changing only the form silently 400s every
+// submission.
 const ALLOWED_PROJECT_TYPES = new Set([
-  "Real-estate website or listings",
+  "Business website",
+  "Real-estate website",
   "Web or mobile application",
+  "Care plan only",
   "Product partnership",
   "Something else",
 ]);
@@ -11,6 +16,8 @@ type LeadPayload = {
   company?: unknown;
   projectType?: unknown;
   message?: unknown;
+  /** Slug of the package the visitor was reading, from ?package= */
+  package?: unknown;
   website?: unknown;
 };
 
@@ -51,6 +58,7 @@ export async function POST(request: Request) {
     email: clean(payload.email, 254).toLowerCase(),
     company: clean(payload.company, 120),
     projectType: clean(payload.projectType, 80),
+    package: clean(payload.package, 60),
     message: clean(payload.message, 3000),
   };
 
@@ -102,6 +110,7 @@ export async function POST(request: Request) {
         <p><strong>Email:</strong> ${safe.email}</p>
         <p><strong>Company:</strong> ${safe.company || "Not provided"}</p>
         <p><strong>Project type:</strong> ${safe.projectType}</p>
+        <p><strong>Viewing package:</strong> ${safe.package || "Not specified"}</p>
         <p><strong>Message:</strong></p>
         <p>${safe.message.replace(/\n/g, "<br>")}</p>
       `,
@@ -111,6 +120,7 @@ export async function POST(request: Request) {
         `Email: ${lead.email}`,
         `Company: ${lead.company || "Not provided"}`,
         `Project type: ${lead.projectType}`,
+        `Viewing package: ${lead.package || "Not specified"}`,
         "",
         lead.message,
       ].join("\n"),

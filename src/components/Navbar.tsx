@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const navLinks = [
   { href: "/work", label: "Work" },
-  { href: "/#services", label: "Services" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/#products", label: "Products" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
@@ -42,14 +42,14 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+              className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center bg-ink px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-text-secondary"
+            className="inline-flex items-center justify-center bg-ink px-5 py-2.5 text-[15px] font-medium text-white transition-colors hover:bg-text-secondary"
           >
             Start a project
           </Link>
@@ -100,7 +100,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="border-b border-border-subtle py-3 text-sm text-text-secondary transition-colors hover:text-text-primary"
+              className="border-b border-border-subtle py-3 text-[15px] text-text-secondary transition-colors hover:text-text-primary"
             >
               {link.label}
             </Link>

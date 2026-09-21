@@ -223,7 +223,7 @@ export default function CookieConsent() {
               <h2 className="text-base font-semibold text-text-primary">
                 Your privacy choices
               </h2>
-              <p className="mt-2 text-sm leading-6 text-text-secondary">
+              <p className="mt-2 text-[15px] leading-[1.7] text-text-secondary">
                 We use essential cookies to remember your choices. With your
                 permission, analytics helps us improve the site and marketing
                 cookies let us measure campaigns and show ads on our blog. See
@@ -285,7 +285,7 @@ export default function CookieConsent() {
                 >
                   Cookie settings
                 </h2>
-                <p className="mt-2 text-sm leading-6 text-text-secondary">
+                <p className="mt-2 text-[15px] leading-[1.7] text-text-secondary">
                   Choose which optional cookies FSK Codehouse may use. You can
                   change these settings at any time.
                 </p>
@@ -366,7 +366,7 @@ function PreferenceRow({
         <span className="block text-sm font-semibold text-text-primary">
           {title}
         </span>
-        <span className="mt-1 block text-sm leading-6 text-text-secondary">
+        <span className="mt-1 block text-[15px] leading-[1.7] text-text-secondary">
           {description}
         </span>
       </span>

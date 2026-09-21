@@ -40,13 +40,13 @@ export default function AboutPage() {
       <main className="flex-grow px-5 pb-24 pt-28 sm:px-6 md:pt-36 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <p className="eyebrow">About</p>
-          <h1 className="display mt-5 max-w-4xl text-5xl text-text-primary md:text-7xl">
+          <h1 className="display mt-6 max-w-4xl text-[3.25rem] text-text-primary md:text-[5.25rem]">
             We build useful software around real opportunities.
           </h1>
 
           <div className="mt-10 grid gap-10 border-t border-border-default pt-10 md:grid-cols-[minmax(0,0.4fr)_minmax(0,1fr)] md:gap-16">
             <p className="eyebrow">Who we are</p>
-            <div className="space-y-6 text-[17px] leading-8 text-text-secondary">
+            <div className="lede space-y-6">
               <p>
                 FSK Codehouse is a Philippine software studio building
                 real-estate platforms and web and mobile applications.
@@ -78,7 +78,7 @@ export default function AboutPage() {
                     <h2 className="text-lg font-medium text-text-primary">
                       {value.title}
                     </h2>
-                    <p className="mt-2 text-sm leading-6 text-text-secondary">
+                    <p className="mt-2 text-[15px] leading-[1.7] text-text-secondary">
                       {value.text}
                     </p>
                   </div>
@@ -90,13 +90,13 @@ export default function AboutPage() {
           <div className="mt-14 grid gap-10 border-t border-border-default pt-10 md:grid-cols-[minmax(0,0.4fr)_minmax(0,1fr)] md:gap-16">
             <p className="eyebrow">Registration</p>
             <div>
-              <p className="text-[17px] leading-8 text-text-secondary">
+              <p className="lede">
                 FSK Codehouse is a registered Philippine business. Our business
                 name, F.S.K Codehouse Software Development Services, is
                 registered with the Department of Trade and Industry under BN
                 No. 8395635, valid to August 3, 2031.
               </p>
-              <p className="mt-4 text-sm leading-6 text-text-muted">
+              <p className="mt-4 text-[15px] leading-[1.7] text-text-muted">
                 Registration can be verified through the DTI Business Name
                 Registration System.
               </p>
@@ -104,23 +104,23 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-16 border-t border-border-default pt-12">
-            <h2 className="display max-w-2xl text-4xl text-text-primary md:text-5xl">
+            <h2 className="display max-w-2xl text-[2.75rem] text-text-primary md:text-[3.5rem]">
               Work with us
             </h2>
-            <p className="mt-5 max-w-xl text-[17px] leading-8 text-text-secondary">
+            <p className="lede mt-5 max-w-xl">
               Have a property business or an application you want to bring to
               market? Tell us where you are headed.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center bg-ink px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-text-secondary"
+                className="inline-flex items-center justify-center bg-ink px-7 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-text-secondary"
               >
                 Start a project
               </Link>
               <Link
                 href="/work"
-                className="inline-flex items-center justify-center border border-border-default px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:border-text-primary"
+                className="inline-flex items-center justify-center border border-border-default px-7 py-3.5 text-[15px] font-medium text-text-primary transition-colors hover:border-text-primary"
               >
                 See the work
               </Link>

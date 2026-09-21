@@ -27,7 +27,7 @@ export default function ProjectRow({
 
       <div>
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <h3 className="display text-3xl text-text-primary md:text-4xl">
+          <h3 className="display text-[2rem] text-text-primary md:text-[2.5rem]">
             {project.name}
           </h3>
           <span className="font-mono text-xs text-text-muted">
@@ -35,7 +35,7 @@ export default function ProjectRow({
           </span>
         </div>
 
-        <p className="mt-3 max-w-xl text-[15px] leading-7 text-text-secondary">
+        <p className="mt-3.5 max-w-xl text-[16.5px] leading-[1.7] text-text-secondary">
           {project.summary}
         </p>
 
@@ -43,14 +43,14 @@ export default function ProjectRow({
           {project.stack.map((item) => (
             <span
               key={item}
-              className="border border-border-default px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-text-secondary"
+              className="border border-border-default px-2 py-1 font-mono text-[11px] uppercase tracking-wider text-text-secondary"
             >
               {item}
             </span>
           ))}
         </div>
 
-        <span className="mt-6 inline-block border-b border-text-primary pb-0.5 text-sm text-text-primary transition-colors group-hover:border-accent-bright">
+        <span className="mt-6 inline-block border-b border-text-primary pb-0.5 text-[15px] text-text-primary transition-colors group-hover:border-accent-bright">
           Read the case study
         </span>
       </div>

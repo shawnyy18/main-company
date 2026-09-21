@@ -18,10 +18,10 @@ export default function WorkPage() {
       <main className="flex-grow px-5 pb-24 pt-28 sm:px-6 md:pt-36 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <p className="eyebrow">Selected work</p>
-          <h1 className="display mt-5 max-w-3xl text-5xl text-text-primary md:text-7xl">
+          <h1 className="display mt-6 max-w-3xl text-[3.25rem] text-text-primary md:text-[5.25rem]">
             Things we built that are live.
           </h1>
-          <p className="mt-6 max-w-xl text-[17px] leading-8 text-text-secondary">
+          <p className="lede mt-7 max-w-xl">
             Every project below is running in production. Where a client agreed
             to be named, we name them.
           </p>

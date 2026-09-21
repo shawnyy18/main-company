@@ -27,25 +27,54 @@ html {
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
+  font-size: 1.0625rem;
+  line-height: 1.7;
   text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* --- Editorial type --- */
 
 .display {
   font-family: var(--font-display);
+  overflow-wrap: break-word;
   font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.03;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
   text-wrap: balance;
+}
+
+/* Prices are the single most-read element on the pricing page. Tabular
+   figures keep columns aligned; the tighter tracking stops large numerals
+   from drifting apart. */
+.price {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .eyebrow {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+}
+
+/* Opening paragraph of a section. One step above body so the eye has an
+   obvious entry point before it reaches the detail. */
+.lede {
+  font-size: 1.1875rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .lede {
+    font-size: 1.25rem;
+  }
 }
 
 .rule-top {
@@ -170,8 +199,8 @@ body {
 
 .prose-article {
   color: var(--color-text-secondary);
-  font-size: 1.0625rem;
-  line-height: 1.85;
+  font-size: 1.125rem;
+  line-height: 1.8;
 }
 
 /* Only the very first element of the body loses its top margin. The body is

@@ -171,7 +171,7 @@ export default async function AppPage({ params }: { params: Params }) {
                 <p className="mt-4 text-2xl font-medium tracking-tight text-text-primary">
                   {app.tagline}
                 </p>
-                <p className="mt-6 max-w-2xl text-[17px] leading-8 text-text-secondary sm:text-lg">
+                <p className="mt-6 max-w-2xl text-[19px] leading-[1.7] text-text-secondary sm:text-lg">
                   {app.description}
                 </p>
 
@@ -221,7 +221,7 @@ export default async function AppPage({ params }: { params: Params }) {
               <h2 className="text-3xl font-semibold tracking-tight text-text-primary md:text-5xl">
                 A closer look at private sharing.
               </h2>
-              <p className="mt-4 text-[17px] leading-8 text-text-secondary">
+              <p className="mt-4 text-[19px] leading-[1.7] text-text-secondary">
                 Home screen updates, fresh moments, searchable memories, and
                 private chats all stay centered on the people you choose.
               </p>
@@ -253,7 +253,7 @@ export default async function AppPage({ params }: { params: Params }) {
                   Private sharing for the people closest to you.
                 </h2>
               </div>
-              <p className="max-w-md text-sm leading-6 text-text-secondary md:text-base">
+              <p className="max-w-md text-[15px] leading-[1.7] text-text-secondary md:text-base">
                 Lenso brings moments, messages, groups, widgets, and time
                 capsules into one calm private space.
               </p>
@@ -278,7 +278,7 @@ export default async function AppPage({ params }: { params: Params }) {
                   <h3 className="text-lg font-semibold tracking-tight text-text-primary">
                     {feature.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-text-secondary">
+                  <p className="mt-3 text-[15px] leading-[1.7] text-text-secondary">
                     {feature.text}
                   </p>
                 </article>
@@ -294,7 +294,7 @@ export default async function AppPage({ params }: { params: Params }) {
                 <h2 className="text-3xl font-semibold tracking-tight text-text-primary md:text-4xl">
                   Download {app.name} on iOS.
                 </h2>
-                <p className="mt-4 max-w-2xl text-[17px] leading-8 text-text-secondary">
+                <p className="mt-4 max-w-2xl text-[19px] leading-[1.7] text-text-secondary">
                   Lenso is available through the App Store page. Review privacy,
                   terms, and support details here whenever you need them.
                 </p>

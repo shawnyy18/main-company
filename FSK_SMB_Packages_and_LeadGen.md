@@ -1,3 +1,8 @@
+> **SUPERSEDED — 29 August 2026.** The package prices in §3 are no longer
+> current. Live pricing is defined in `src/lib/packages.ts` and published at
+> /pricing. The targeting, channel, and legal guidance in this document still
+> stands; the numbers do not.
+
 # FSK Codehouse — SMB Packages & Lead Generation Plan
 
 **Prepared:** 11 August 2026

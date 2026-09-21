@@ -23,7 +23,7 @@ export default function Footer() {
                 FSK Codehouse
               </span>
             </Link>
-            <p className="max-w-sm text-sm leading-6 text-text-secondary">
+            <p className="max-w-sm text-[15px] leading-[1.7] text-text-secondary">
               A Philippine software studio building real-estate platforms and
               web and mobile applications.
             </p>
@@ -34,7 +34,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <Link
                 href="/work"
-                className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
               >
                 All work
               </Link>
@@ -42,7 +42,7 @@ export default function Footer() {
                 <Link
                   key={project.slug}
                   href={`/work/${project.slug}`}
-                  className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                  className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
                 >
                   {project.name}
                 </Link>
@@ -54,26 +54,26 @@ export default function Footer() {
             <h2 className="eyebrow mb-4">Company</h2>
             <div className="flex flex-col gap-3">
               <Link
-                href="/#services"
-                className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                href="/pricing"
+                className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
               >
-                Services
+                Pricing
               </Link>
               <Link
                 href="/#partnerships"
-                className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
               >
                 How we work
               </Link>
               <Link
                 href="/blog"
-                className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
               >
                 Blog
               </Link>
               <Link
                 href="/about"
-                className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
               >
                 About
               </Link>
@@ -85,13 +85,13 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <Link
                 href="/privacy"
-                className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
               >
                 Website privacy
               </Link>
               <Link
                 href="/cookies"
-                className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
               >
                 Cookie Policy
               </Link>
@@ -100,7 +100,7 @@ export default function Footer() {
                 <Link
                   key={app.slug}
                   href={`/apps/${app.slug}/terms`}
-                  className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                  className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
                 >
                   {app.name} terms
                 </Link>
@@ -113,7 +113,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <a
                 href="mailto:hello@fskcodehouse.com"
-                className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
               >
                 hello@fskcodehouse.com
               </a>
@@ -121,7 +121,7 @@ export default function Footer() {
                 href={companyLinks.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
               >
                 Facebook
               </a>
@@ -129,7 +129,7 @@ export default function Footer() {
                 href={companyLinks.linkedIn}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
               >
                 LinkedIn
               </a>

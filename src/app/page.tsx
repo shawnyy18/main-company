@@ -1,28 +1,42 @@
 import Link from "next/link";
 import { apps } from "@/lib/apps";
 import { featuredProjects } from "@/lib/projects";
+import { formatPeso, startingPrice } from "@/lib/packages";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AppCard from "@/components/AppCard";
 import ProjectRow from "@/components/ProjectRow";
-import ProjectLeadForm from "@/components/ProjectLeadForm";
+import ContactBlock from "@/components/ContactBlock";
 import Reveal from "@/components/Reveal";
 import WorkShowcase from "@/components/WorkShowcase";
 
 const services = [
   {
     number: "01",
-    title: "Real-estate websites and listing systems",
+    title: "Business websites",
     description:
-      "Property sites, searchable inventory, agent pages, and the inquiry flow behind them. Built so listings can be kept current without a developer.",
-    deliverables: ["Listing management", "Agent pages", "Lead capture"],
+      "Company sites for businesses that need to be found and contacted. From a single page to an eight-page site you update yourself.",
+    price: `From ${formatPeso(startingPrice("business"))}`,
+    href: "/pricing#business",
+    cta: "See packages",
   },
   {
     number: "02",
+    title: "Real-estate websites",
+    description:
+      "Agent sites, property pages, and brokerage listing systems with a dashboard your staff run themselves.",
+    price: `From ${formatPeso(startingPrice("real-estate"))}`,
+    href: "/pricing#real-estate",
+    cta: "See packages",
+  },
+  {
+    number: "03",
     title: "Web and mobile applications",
     description:
-      "Production software for clients, co-build partnerships, and FSK-owned ideas — from product strategy through launch and iteration.",
-    deliverables: ["iOS apps", "Web platforms", "Product partnerships"],
+      "Software with accounts, payments, dashboards, or a mobile app. Scoped and priced after a discovery call.",
+    price: "Quoted after discovery",
+    href: "/pricing#applications",
+    cta: "How this works",
   },
 ];
 
@@ -60,20 +74,20 @@ export default function HomePage() {
                 Real-estate platforms and mobile products.
               </h1>
               <div className="md:pb-3">
-                <p className="text-[17px] leading-8 text-text-secondary">
+                <p className="lede">
                   We build the systems businesses actually run on, and ship our
                   own apps to the App Store.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-3">
                   <Link
                     href="/work"
-                    className="inline-flex items-center justify-center bg-ink px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-text-secondary"
+                    className="inline-flex items-center justify-center bg-ink px-7 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-text-secondary"
                   >
                     See the work
                   </Link>
                   <Link
                     href="/#contact"
-                    className="inline-flex items-center justify-center border border-border-default px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:border-text-primary"
+                    className="inline-flex items-center justify-center border border-border-default px-7 py-3.5 text-[15px] font-medium text-text-primary transition-colors hover:border-text-primary"
                   >
                     Start a project
                   </Link>
@@ -94,7 +108,7 @@ export default function HomePage() {
               <p className="eyebrow">002 — Selected work</p>
               <Link
                 href="/work"
-                className="border-b border-border-default pb-0.5 text-sm text-text-secondary transition-colors hover:border-text-primary hover:text-text-primary"
+                className="border-b border-border-default pb-0.5 text-[15px] text-text-secondary transition-colors hover:border-text-primary hover:text-text-primary"
               >
                 All work
               </Link>
@@ -111,46 +125,54 @@ export default function HomePage() {
         {/* Services */}
         <section id="services" className="scroll-mt-20 px-5 py-14 sm:px-6 md:py-20 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <p className="eyebrow">003 — Services</p>
+            <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <p className="eyebrow">003 — Services</p>
+              <Link
+                href="/pricing"
+                className="border-b border-border-default pb-0.5 text-[15px] text-text-secondary transition-colors hover:border-text-primary hover:text-text-primary"
+              >
+                Full pricing
+              </Link>
+            </div>
+
             <div className="mt-6 grid gap-8 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-end md:gap-14">
-              <h2 className="display text-4xl text-text-primary md:text-6xl">
-                Two things, done properly.
+              <h2 className="display text-[2.75rem] text-text-primary md:text-[4rem]">
+                Three things, priced openly.
               </h2>
-              <p className="text-[15px] leading-7 text-text-secondary md:pb-2">
-                Every engagement starts with the business result, not a list of
-                technologies.
+              <p className="text-[16px] leading-[1.75] text-text-secondary md:pb-2">
+                Most studios here make you ask. Our package prices are published
+                — see exactly what each one includes before you contact us.
               </p>
             </div>
 
-            <div className="reveal mt-12 grid border-t border-border-default md:grid-cols-2">
+            <div className="reveal mt-12 grid border-t border-border-default md:grid-cols-3">
               {services.map((service, index) => (
                 <article
                   key={service.number}
-                  className={`border-b border-border-default py-9 md:border-b-0 ${
-                    index === 0
-                      ? "md:border-r md:pr-10"
-                      : "md:pl-10"
-                  }`}
+                  className={`flex flex-col border-b border-border-default py-9 md:border-b-0 ${
+                    index < services.length - 1
+                      ? "md:border-r md:pr-8"
+                      : "md:pl-8"
+                  } ${index === 1 ? "md:px-8" : ""}`}
                 >
                   <p className="font-mono text-xs text-text-muted">
                     {service.number}
                   </p>
-                  <h3 className="display mt-4 text-2xl text-text-primary md:text-3xl">
+                  <h3 className="display mt-5 text-[1.75rem] text-text-primary md:text-[2rem]">
                     {service.title}
                   </h3>
-                  <p className="mt-4 text-[15px] leading-7 text-text-secondary">
+                  <p className="mt-5 flex-1 text-[16.5px] leading-[1.75] text-text-secondary">
                     {service.description}
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {service.deliverables.map((deliverable) => (
-                      <span
-                        key={deliverable}
-                        className="border border-border-default px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-text-secondary"
-                      >
-                        {deliverable}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="mt-6 font-mono text-[11.5px] uppercase tracking-[0.09em] text-text-muted">
+                    {service.price}
+                  </p>
+                  <Link
+                    href={service.href}
+                    className="mt-3 inline-block self-start border-b border-text-primary pb-0.5 text-[15px] text-text-primary transition-colors hover:border-accent-bright"
+                  >
+                    {service.cta}
+                  </Link>
                 </article>
               ))}
             </div>
@@ -162,7 +184,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-6xl">
             <p className="eyebrow">004 — How we work</p>
             <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
-              <h2 className="display text-4xl text-text-primary md:text-5xl">
+              <h2 className="display text-[2.75rem] text-text-primary md:text-[3.5rem]">
                 The right model for the right idea.
               </h2>
               <div className="reveal border-t border-border-default">
@@ -171,14 +193,14 @@ export default function HomePage() {
                     key={model.label}
                     className="grid gap-2 border-b border-border-default py-6 sm:grid-cols-[9rem_1fr] sm:gap-7"
                   >
-                    <p className="font-mono text-[11px] uppercase tracking-wider text-text-muted">
+                    <p className="font-mono text-[11.5px] uppercase tracking-[0.09em] text-text-muted">
                       {model.label}
                     </p>
                     <div>
                       <h3 className="text-lg font-medium text-text-primary">
                         {model.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-6 text-text-secondary">
+                      <p className="mt-2 text-[15px] leading-[1.7] text-text-secondary">
                         {model.text}
                       </p>
                     </div>
@@ -196,10 +218,10 @@ export default function HomePage() {
               005 — FSK products
             </p>
             <div className="mt-6 grid gap-6 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-end md:gap-14">
-              <h2 className="display text-4xl md:text-6xl">
+              <h2 className="display text-[2.75rem] md:text-[4rem]">
                 Software we own and operate.
               </h2>
-              <p className="text-[15px] leading-7 text-white/60 md:pb-2">
+              <p className="text-[16px] leading-[1.75] text-white/60 md:pb-2">
                 Running our own products keeps us close to the realities of
                 launching, supporting, and growing software — not just
                 delivering it.
@@ -219,19 +241,19 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-6xl gap-8 border-y border-border-default py-10 sm:grid-cols-3">
             <div>
               <p className="eyebrow">Registered</p>
-              <p className="mt-3 text-[15px] leading-7 text-text-secondary">
+              <p className="mt-3 text-[16px] leading-[1.75] text-text-secondary">
                 DTI registered business · BN No. 8395635 · Valid to August 2031
               </p>
             </div>
             <div>
               <p className="eyebrow">Based in</p>
-              <p className="mt-3 text-[15px] leading-7 text-text-secondary">
+              <p className="mt-3 text-[16px] leading-[1.75] text-text-secondary">
                 The Philippines, working with clients across time zones
               </p>
             </div>
             <div>
               <p className="eyebrow">Shipping since</p>
-              <p className="mt-3 text-[15px] leading-7 text-text-secondary">
+              <p className="mt-3 text-[16px] leading-[1.75] text-text-secondary">
                 Live client sites and an app on the App Store
               </p>
             </div>
@@ -241,30 +263,10 @@ export default function HomePage() {
         {/* Contact */}
         <section id="contact" className="scroll-mt-20 px-5 pb-24 sm:px-6 md:pb-28 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <p className="eyebrow">006 — Start here</p>
-            <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-16">
-              <div>
-                <h2 className="display text-4xl text-text-primary md:text-5xl">
-                  Tell us what you want to launch or improve.
-                </h2>
-                <p className="mt-5 text-[17px] leading-8 text-text-secondary">
-                  We&apos;ll help identify the right first version and a
-                  practical path from concept to release.
-                </p>
-                <p className="mt-7 text-sm leading-6 text-text-secondary">
-                  Prefer email?{" "}
-                  <a
-                    className="border-b border-text-primary pb-0.5 text-text-primary"
-                    href="mailto:hello@fskcodehouse.com?subject=Project%20inquiry"
-                  >
-                    hello@fskcodehouse.com
-                  </a>
-                </p>
-              </div>
-              <ProjectLeadForm />
-            </div>
+            <ContactBlock eyebrow="006 — Start here" />
           </div>
         </section>
+
       </main>
 
       <Footer />
